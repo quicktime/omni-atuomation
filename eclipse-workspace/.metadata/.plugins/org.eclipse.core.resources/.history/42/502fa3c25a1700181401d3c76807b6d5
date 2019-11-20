@@ -1,0 +1,25 @@
+package sheet;
+
+/**
+ * Handles sheet errors
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class SheetTestErrors {
+
+	/**
+	 * Gets error message from passed in data sheet
+	 * @param sheet - passed in data sheet
+	 * @return error message
+	 */
+	public static String getError(String sheet) {
+		// TODO: Get error from passed in sheet
+		String string = "";
+		return string;
+	}
+	
+	public static String getErrorDetails() {
+		String string = "";
+		return string;
+	}
+}

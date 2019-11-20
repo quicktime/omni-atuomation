@@ -1,0 +1,6 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="TODO txt - WordPad" locator="/Window[@caption=&apos;TODO.txt - WordPad&apos;]">
+    <ObjectMapEntry id="Bold" locator="//PushButton[@caption=&apos;Bold&apos;]"/>
+    <ObjectMapEntry id="title bar" locator="//AccessibleControl[@role=&apos;title bar&apos;]"/>
+  </ObjectMapEntry>
+</ObjectMap>

@@ -1,0 +1,36 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="DB Browser for SQLite - swattestexcc" locator="/Window[@caption='DB Browser for SQLite - //swattestexcc/Omni_Validation_Scripts/Omni_Automation_Master/files/databases/test/epsilon.db']">
+    <ObjectMapEntry id="0361c43e-009f-4e7e-9ebc-68e63629f5ce" locator="//AccessibleControl[@caption='0361c43e-009f-4e7e-9ebc-68e63629f5ce']" />
+    <ObjectMapEntry id="Browse Data" locator="//AccessibleControl[@caption='Browse Data']" />
+    <ObjectMapEntry id="ce568d24-b3d0-4a08-a4a0-eb43e122d300" locator="//AccessibleControl[@caption='ce568d24-b3d0-4a08-a4a0-eb43e122d300']" />
+    <ObjectMapEntry id="Choose a filename to export data" locator="//Dialog[@caption='Choose a filename to export data']">
+      <ObjectMapEntry id="Confirm Save As" locator="//Dialog[@caption='Confirm Save As']">
+        <ObjectMapEntry id="Yes" locator="//PushButton[@caption='Yes']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="Save" locator="//PushButton[@caption='Save']" />
+      <ObjectMapEntry id="TextField" locator="//TextField" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Execute SQL" locator="//AccessibleControl[@caption='Execute SQL']" />
+    <ObjectMapEntry id="Execute SQL PushButton" locator="//PushButton[@caption='Execute SQL']" />
+    <ObjectMapEntry id="Export data as CSV" locator="//Window[@caption='Export data as CSV']">
+      <ObjectMapEntry id="DB Browser for SQLite" locator="//Window[@caption='DB Browser for SQLite']">
+        <ObjectMapEntry id="OK Enter" locator="//PushButton[@caption='OK Enter']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="Field seperator" locator="//AccessibleControl[@caption='Field separator Down']" />
+      <ObjectMapEntry id="New line chars" locator="//AccessibleControl[@caption=' Down']" />
+      <ObjectMapEntry id="OK Enter" locator="//PushButton[@caption='OK Enter']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Export to CSV Alt+C" locator="//AccessibleControl[@caption='Export to CSV Alt+C']" />
+    <ObjectMapEntry id="Last Row" locator="//PushButton[@caption='&gt;|']" />
+    <ObjectMapEntry id="menu button" locator="//AccessibleControl[@role='menu button']" />
+    <ObjectMapEntry id="Open SQL file" locator="//PushButton[@caption='Open SQL file']" />
+    <ObjectMapEntry id="postSelfTestData" locator="//AccessibleControl[@caption='postSelfTestData']" />
+    <ObjectMapEntry id="Select SQL file to open" locator="//Dialog[@caption='Select SQL file to open']">
+      <ObjectMapEntry id="Cancel" locator="//PushButton[@caption='Cancel']" />
+      <ObjectMapEntry id="File name" locator="//TextField[@caption='File name:']" />
+      <ObjectMapEntry id="Open" locator="//PushButton[@caption='Open']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Table Down" locator="//AccessibleControl[@caption='Table: Down']" />
+    <ObjectMapEntry id="title bar" locator="//AccessibleControl[@role='title bar']" />
+  </ObjectMapEntry>
+</ObjectMap>

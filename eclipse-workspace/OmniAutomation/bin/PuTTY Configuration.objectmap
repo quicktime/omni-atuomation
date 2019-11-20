@@ -1,0 +1,12 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="PuTTY Configuration" locator="/Window[@caption=&apos;PuTTY Configuration&apos;]">
+    <ObjectMapEntry id="All session output" locator="//RadioList[@caption=&apos;All session output&apos;]"/>
+    <ObjectMapEntry id="Always overwrite it" locator="//RadioList[@caption=&apos;Always overwrite it&apos;]"/>
+    <ObjectMapEntry id="Category" locator="//Tree[@caption=&apos;Category:&apos;]"/>
+    <ObjectMapEntry id="Host Name (or IP address)" locator="//TextField[@caption=&apos;Host Name (or IP address)&apos;]"/>
+    <ObjectMapEntry id="Log file name" locator="//TextField[@caption=&apos;Log file name:&apos;]"/>
+    <ObjectMapEntry id="Open" locator="//PushButton[@caption=&apos;Open&apos;]"/>
+    <ObjectMapEntry id="Port" locator="//TextField[@caption=&apos;Port&apos;]"/>
+    <ObjectMapEntry id="SSH" locator="//RadioList[@caption=&apos;SSH&apos;]"/>
+  </ObjectMapEntry>
+</ObjectMap>

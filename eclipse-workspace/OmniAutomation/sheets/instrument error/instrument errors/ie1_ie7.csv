@@ -1,0 +1,7 @@
+sendCode;errorMessage;solutionText;omniText;errorCodeText
+20;The actual temperature {} has drifted too far away from the setpoint {};Check room temperature and instrument fan. If above step(s) do not solve the problem, call Cepheid technical support.;"{}" {};Code : 1001
+21;The temperatures for heaters A and B are {} and {}. The temperature difference of two heaters exceeds the limit of {}; Reboot the instrument. If above step(s) do not solve the problem, call Cepheid technical support.;""{}"" {};Code : 1002
+23;The internal instrument temperature {} was out of range of {} - {}; Check room temperature and instrument fan. If above step(s) do not solve the problem, call Cepheid technical support.;"{}" {};Code : 1004
+50;LED#{} of detector #{} from optic signal of {} exceeded the limit of {}; Retry test with a new cartridge. Check if the instrument door is closed. If above step(s) do not solve the problem, call Cepheid technical support.;"{}" {};Code : 1005
+90;Detector #{} dark signal of {} exceeded the limit of {};Move the instrument to a darker place. Re-run the test and make sure the door is closed during the run. Reboot the instrument. If above step(s) do not solve the problem, call Cepheid technical support.;"{}" {};Code : 1006
+29;The measured temperature of the optical system was {} which was not within the acceptable range of {} to {p3};Retry the test. If above step(s) do not solve the problem, call Cepheid technical support.;"{}" {};Code : 1017

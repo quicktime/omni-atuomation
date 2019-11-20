@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="com.borland.silktest.JTF_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="src" path="Object Maps"/>
+	<classpathentry kind="src" path="Verifications"/>
+	<classpathentry kind="lib" path="T:/swq/private/Brendan/eclipse-workspace/okhttp-3.9.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

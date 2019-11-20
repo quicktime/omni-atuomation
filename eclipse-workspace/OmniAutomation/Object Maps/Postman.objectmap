@@ -1,0 +1,6 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Postman" locator="/Window[@caption=&apos;Postman&apos;]">
+    <ObjectMapEntry id="Chrome Legacy Window" locator="//Control[@caption=&apos;Chrome Legacy Window&apos;]"/>
+    <ObjectMapEntry id="Minimize" locator="//PushButton[@caption=&apos;Minimize&apos;]"/>
+  </ObjectMapEntry>
+</ObjectMap>

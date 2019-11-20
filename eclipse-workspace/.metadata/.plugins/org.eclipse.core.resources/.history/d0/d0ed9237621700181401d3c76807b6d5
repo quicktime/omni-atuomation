@@ -1,0 +1,45 @@
+package testcontrol.D27351;
+
+import helper.Errors;
+import instrument.Putty;
+import mobile.StartTest;
+import mobile.MobileTestErrors;
+import postman.PostmanGetError;
+import postman.PostmanGetTest;
+import postman.PostmanSendError;
+import sheet.LineCount;
+import sheet.SheetTestErrors;
+
+import static org.junit.Assert.assertFalse;
+
+import java.io.IOException;
+
+/**
+ * Handles all test cases for the Instrument Errors tab
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class InstrumentErrors {
+	
+	public static void ie1_ie7Run() throws IOException {
+		// ErrorCode, ErrorMessage, ErrorDetails
+		String sheet = "./sheets/instrument error/instrument errors/ie1_ie7.csv";
+		for (int i = 0; i < LineCount.lineCount(sheet); i++) { // loops # of rows (excluding header)
+			StartTest.startTest();
+			// wait until test starts
+			PostmanSendError.sendError(SheetTestErrors.getErrorCode(sheet, i));
+			// wait until error appears
+			Errors.compareErrorMessages(MobileTestErrors.getErrorMessage(), SheetTestErrors.getErrorMessage(sheet, i));
+			// wait until test completion
+			Errors.compareErrorDetails(MobileTestErrors.getErrorDetails(), SheetTestErrors.getErrorDetails(sheet));
+			PostmanGetTest.getTests();
+			Errors.compareMobilePostman(MobileTestErrors.getErrorMessage(), PostmanGetError.getErrorMessage());
+			PostmanSendError.sendError("0");
+			Putty.restart();
+			// wait until omni full restarts
+			StartTest.startTest();
+			// wait until test completion
+			assertFalse(MobileTestErrors.errorsExist());
+		}
+	}
+}

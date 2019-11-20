@@ -1,0 +1,12 @@
+1521506001516	Delete element
+1521507760702	Rename local variable 'lblMonGas'
+1521507768756	Rename local variable 'lblMonMiles'
+1521677766285	Rename compilation unit 'DatePickerX.java'
+1521677943454	Delete element
+1521680201388	Rename field 'payPerLabel'
+1521680240006	Rename local variable 'sPayPer'
+1521851361132	Rename method 'addCalculateButton'
+1521852334771	Rename field 'takeHomeLabel'
+1521852340816	Rename field 'payPerAfterLabel'
+1521853658393	Rename local variable 'sMilesLeft'
+1521854328838	Rename local variable 'milesNeeded'

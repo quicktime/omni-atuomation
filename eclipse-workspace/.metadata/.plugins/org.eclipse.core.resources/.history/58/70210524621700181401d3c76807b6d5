@@ -1,0 +1,64 @@
+package sheet;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * Handles sheet errors
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class SheetTestErrors {
+	
+	/**
+	 * Gets error code from passed in data sheet
+	 * @param sheet - data sheet
+	 * @param line - line number
+	 * @return error code
+	 * @throws IOException 
+	 */
+	@SuppressWarnings({ "resource" })
+	public static String getErrorCode(String sheet, int line) throws IOException {
+		BufferedReader error = new BufferedReader(new FileReader(sheet));
+		for (int i = 0; i < line; i++) {
+			error.readLine(); // skips # of lines
+		}
+		String fullLine = error.readLine();
+		Scanner errorLine = new Scanner(fullLine);
+		errorLine.useDelimiter(";");
+		String code = errorLine.next();
+		return code;
+	}
+
+	/**
+	 * Gets error message from passed in data sheet
+	 * @param sheet - passed in data sheet
+	 * @return error message
+	 * @throws FileNotFoundException 
+	 */
+	public static String getErrorMessage(String sheet, int line) throws FileNotFoundException {
+		BufferedReader error = new BufferedReader(new FileReader(sheet));
+		for (int i = 0; i < line; i++) {
+			error.readLine(); // skips # of lines
+		}
+		String fullLine = error.readLine();
+		Scanner errorLine = new Scanner(fullLine);
+		errorLine.useDelimiter(";");
+		String skip = errorLine.next();
+		String message = errorLine.next();
+		return message;
+	}
+	
+	/**
+	 * Gets error details from passed in data sheet
+	 * @param sheet - passed in data sheet
+	 * @return error details
+	 */
+	public static String getErrorDetails(String sheet) {
+		String string = "";
+		return string;
+	}
+}

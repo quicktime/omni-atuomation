@@ -1,0 +1,13 @@
+1519767283674	Rename local variable 'errorCode'
+1519767353430	Rename local variable 'errorCode'
+1519767480757	Rename type 'Errors'
+1519768480650	Rename method 'errorDetails'
+1519768491689	Rename method 'errorCode'
+1519849250341	Rename method 'getErrorDetails'
+1519849258548	Rename local variable 'details'
+1519849813760	Rename method 'getOmniText'
+1519849819898	Rename method 'getErrorOmniTex'
+1519849838033	Rename local variable 'omniText'
+1519850056799	Rename type 'GetToHome'
+1519850117004	Delete element
+1519851033505	Rename local variable 'replace'

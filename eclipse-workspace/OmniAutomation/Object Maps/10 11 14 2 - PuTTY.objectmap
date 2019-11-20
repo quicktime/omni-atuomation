@@ -1,0 +1,13 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="10 11 14 2 - PuTTY" locator="/Window[@caption=&apos;10.11.14.2 - PuTTY&apos;]">
+    <ObjectMapEntry id="PuTTY Exit Confirmation" locator="//Dialog[@caption=&apos;PuTTY Exit Confirmation&apos;]">
+      <ObjectMapEntry id="OK" locator="//PushButton[@caption=&apos;OK&apos;]"/>
+    </ObjectMapEntry>
+    <ObjectMapEntry id="PuTTY Fatal Error" locator="//Dialog[@caption=&apos;PuTTY Fatal Error&apos;]">
+      <ObjectMapEntry id="OK" locator="//PushButton[@caption=&apos;OK&apos;]"/>
+    </ObjectMapEntry>
+    <ObjectMapEntry id="PuTTY Security Alert" locator="//Dialog[@caption=&apos;PuTTY Security Alert&apos;]">
+      <ObjectMapEntry id="Yes" locator="//PushButton[@caption=&apos;Yes&apos;]"/>
+    </ObjectMapEntry>
+  </ObjectMapEntry>
+</ObjectMap>

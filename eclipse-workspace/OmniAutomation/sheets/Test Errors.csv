@@ -1,0 +1,7 @@
+Title,Solution,Omni,Error Code
+Detector #3 dark signal of 1089 exceeded the limit of 300,Move the instrument to a darker place. Re-run the test and make sure the door is closed during the run. Reboot the instrument. If above step(s) do not solve the problem,call Cepheid technical support., "00000261" 2000000261, Code : 1006
+Instrument [2000000261] lost communication while test was running,Wait for the communication to be restoredReboot the instrument.If above step(s) do not solve the problem,call Cepheid technical support.,"00000261" 2000000261,Code : 2123;
+Detector #3 dark signal of 1089 exceeded the limit of 300,,00000261 2000000261,Code: 1006;
+Detector #3 dark signal of 1089 exceeded the limit of 300,,00000261 2000000261,Code: 1006;
+Detector #3 dark signal of 1089 exceeded the limit of 300,,00000261 2000000261,Code: 1006;
+Detector #3 dark signal of 1089 exceeded the limit of 300,,00000261 2000000261,Code: 1006;

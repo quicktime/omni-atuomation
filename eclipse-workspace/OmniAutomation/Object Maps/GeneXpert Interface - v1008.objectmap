@@ -1,0 +1,9 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="GeneXpert Interface - v1008" locator="/Window[@caption=&apos;GeneXpert Interface - v1008&apos;]">
+    <ObjectMapEntry id="Break" locator="//PushButton[@caption=&apos;Break&apos;]"/>
+    <ObjectMapEntry id="Exit" locator="//PushButton[@caption=&apos;Exit&apos;]"/>
+    <ObjectMapEntry id="ListBox" locator="//ListBox"/>
+    <ObjectMapEntry id="Send" locator="//PushButton[@caption=&apos;Send&apos;]"/>
+    <ObjectMapEntry id="TextField" locator="//TextField"/>
+  </ObjectMapEntry>
+</ObjectMap>

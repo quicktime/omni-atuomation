@@ -1,0 +1,34 @@
+package testcontrol.D27351;
+
+import helper.ComparePostmanMobile;
+import instrument.Putty;
+import mobile.ErrorDetails;
+import mobile.StartTest;
+import mobile.TestErrors;
+import postman.GetTests;
+import postman.SendError;
+import static org.junit.Assert.assertFalse;;
+
+/**
+ * Handles all test cases for the Instrument Errors tab
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class InstrumentErrors {
+	
+	public static void ie1_ie7Run() {
+		StartTest.startTest();
+		// wait until test starts
+		SendError.sendError("123");
+		// wait until error appears
+		TestErrors.checkError();
+		// wait until test completion
+		ErrorDetails.errorDetails();
+		GetTests.getTests();
+		ComparePostmanMobile.compare();
+		SendError.sendError("0");
+		Putty.restart();
+		StartTest.startTest();
+		assertFalse(TestErrors.errorsExist());
+	}
+}

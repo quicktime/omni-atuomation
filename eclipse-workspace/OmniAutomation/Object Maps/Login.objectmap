@@ -1,0 +1,20 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Login" locator="/Window[@caption=&apos;Login&apos;]">
+    <ObjectMapEntry id="&amp;Tools" locator="//Control[@caption=&apos;&amp;Tools&apos;]"/>
+    <ObjectMapEntry id="Login" locator="//Control[@caption=&apos;      Login&apos;]"/>
+    <ObjectMapEntry id="outline" locator="//AccessibleControl[@role=&apos;outline&apos;]"/>
+    <ObjectMapEntry id="Select file to import configuration from" locator="//Dialog[@caption=&apos;Select file to import configuration from&apos;]">
+      <ObjectMapEntry id="Address  T  swq private Brendan" locator="//ToolBar[@caption=&apos;Address: T:\swq\private\Brendan\Omni Automation Master\programs&apos;]"/>
+      <ObjectMapEntry id="DirectUIHWND" locator="//Control[@windowClassName=&apos;DirectUIHWND&apos;][2]"/>
+      <ObjectMapEntry id="File name" locator="//TextField[@caption=&apos;File name:&apos;]"/>
+      <ObjectMapEntry id="Open" locator="//PushButton[@caption=&apos;Open&apos;]"/>
+      <ObjectMapEntry id="TextField" locator="//TextField[2]"/>
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Tools" locator="//PushButton[@caption=&apos;Tools&apos;]"/>
+    <ObjectMapEntry id="TTreeView" locator="//Control[@windowClassName=&apos;TTreeView&apos;]"/>
+    <ObjectMapEntry id="Warning" locator="//Window[@caption=&apos;Warning&apos;]">
+      <ObjectMapEntry id="OK" locator="//Control[@caption=&apos;OK&apos;]"/>
+      <ObjectMapEntry id="OK PushButton" locator="//PushButton[@caption=&apos;OK&apos;]"/>
+    </ObjectMapEntry>
+  </ObjectMapEntry>
+</ObjectMap>

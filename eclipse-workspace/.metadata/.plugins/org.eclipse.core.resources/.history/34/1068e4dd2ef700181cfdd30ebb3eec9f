@@ -1,0 +1,168 @@
+package sheet;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import testcontrol.Main;
+
+/**
+ * Handles all actions taken in the omni-epsilon.log files
+ * @author Brendan Dolan
+ * @date Created on: Apr 3, 2018
+ */
+public class OmniEpsilonLog {
+	
+	/**
+	 * Gets the first row of the specified file
+	 * @param filePath - file path of the file
+	 * @return the first row
+	 */
+	@SuppressWarnings("resource")
+	public static String firstRow(String filePath) {
+		String firstRow = new String();
+		try { // to catch IOException from readLine
+			BufferedReader input = new BufferedReader(new FileReader(filePath));
+			firstRow = input.readLine();
+		} catch (IOException e) {
+			Main.debug.LOGWarning(e.toString());
+		}
+		
+		return firstRow;
+		// 15 Feb 2018 06:33:12,083 22966346 [GxFileTransferThread - Thread 0]...
+	}
+	
+	/**
+	 * Gets all rows from the specified file
+	 * @param filePath - file path of the file
+	 * @return all rows
+	 */
+	@SuppressWarnings("resource")
+	public static String allRows(String filePath) {
+		ArrayList<String> allRows = new ArrayList<String>();
+		try { // to catch IOException from read
+			BufferedReader input = new BufferedReader(new FileReader(filePath));
+			for (int i = 0; i < LineCount.lineCount(filePath); i++) {
+				allRows.add(input.readLine());
+			}
+		} catch (IOException e) {
+			Main.debug.LOGWarning(e.toString());
+		}
+		
+		return allRows.toString();
+	}
+	
+	/**
+	 * Splits the log row at the first comma instance
+	 * @param row - row passed-in from {@link sheet.OmniEpsilonLog#firstRow(String)}
+	 * @return ArrayList<String> containing both split pieces of the log row
+	 */
+	public static ArrayList<String> splits(String row) {
+		// 15 Feb 2018 06:33:12,083 22966346 [GxFileTransferThread - Thread 0]...
+		ArrayList<String> splits = new ArrayList<String>();
+		String[] timeStampSplit;
+		String[] memUsageSplit;
+		String fromMemUsage;
+		String timeStamp = new String();
+		String memUsage = new String();
+		String memAllocation = new String();
+		
+		timeStampSplit = row.split(",", 2); // {timeStamp, memUsage memAllocation [GxFile...]...}
+		timeStamp = timeStampSplit[0]; // timeStamp
+		
+		fromMemUsage = timeStampSplit[1]; // memUsage memAllocation [GxFile...]...
+		memUsageSplit = fromMemUsage.split(" "); // {memUsage, memAllocation, [GxFile...]...}
+		memUsage = memUsageSplit[0]; // memUsage
+		memAllocation = memUsageSplit[1]; // memAllocation
+		
+		splits.add(timeStamp);
+		splits.add(memUsage);
+		splits.add(memAllocation);
+		
+		return splits;
+		// {15 feb 2018 06:33:12, 083, 22966436}
+	}
+	
+	/**
+	 * Determines whether omni-epsilon.log has timestamps or not
+	 * @param filePath - file path to the omni-epsilon.log file
+	 */
+	public static void hasTimeStamp(String filePath) {
+		String row = firstRow(filePath); // gets the first row of the log
+		ArrayList<String> splits = splits(row); // splits the row
+		
+		String timeStamp = splits.get(0); // 15 feb 2018 06:33:12
+		
+		if (timeStamp.matches("\\d\\d (...) \\d\\d\\d\\d \\d\\d:\\d\\d:\\d\\d")) {
+			Main.debug.LOG("omni-epsilon.log contains timestamp");
+		} else {
+			Main.debug.LOGError("omni-epsilon.log does not contain timestamp");
+		}
+	}
+	
+	/**
+	 * Determines whether omni-epsilon.log has mem usage or not
+	 * @param filePath - file path to the omni-epsilon.log file
+	 */
+	public static void hasMemUsage(String filePath) {
+		String row = firstRow(filePath);
+		ArrayList<String> splits = splits(row);
+		String memUsage = splits.get(1); // 083
+		
+		if (memUsage.matches("\\d*")) {
+			Main.debug.LOG("omni-epsilon.log contains memory usage");
+		} else {
+			Main.debug.LOGError("omni-epsilon.log does not contain memory usage");
+		}
+	}
+	
+	/**
+	 * Determines whether omni-epsilon.log has mem allocation or not
+	 * @param filePath - file path to the omni-epsilon.log file
+	 */
+	public static void hasMemAllocation(String filePath) {
+		String row = firstRow(filePath);
+		ArrayList<String> splits = splits(row);
+		String memAllocation = splits.get(2); // 22966436
+		
+		if (memAllocation.matches("\\d*")) {
+			Main.debug.LOG("omni-epsilon.log contains memory allocation");
+		} else {
+			Main.debug.LOGError("omni-epsilon.log does not contain memory allocation");
+		}
+	}
+	
+	/**
+	 * Determines whether omni-epsilon.log has 'gxmini.com' or not
+	 * @param filePath - file path to the omni-epsilon.log file
+	 */
+	public static void hasGxMini(String filePath) {
+		String allRows = allRows(filePath);
+		
+		if (!allRows.contains("gxmini.com")) {
+			Main.debug.LOG("omni-epsilon.log does not contain 'gxmini.com'");
+		} else {
+			Main.debug.LOGError("omni-epsilon.log does contain 'gxmini.com'");
+		}
+	}
+
+	/**
+	 * Determines whether omni-epsilon.log contains the passed-in string or not
+	 * @param filePath - file path to the omni-epsilon.log file
+	 * @param string - string to search for
+	 */
+	public static void logContains(String filePath, String string) {
+		String allRows = allRows(filePath + "omni-epsilon.log");
+		
+		if (allRows.contains(string)) {
+			Main.debug.LOG("omni-epsilon.log contains " + string);
+		} else {
+			Main.debug.LOGError("omni-epsilon.log contains " + string);
+		}
+	}
+}

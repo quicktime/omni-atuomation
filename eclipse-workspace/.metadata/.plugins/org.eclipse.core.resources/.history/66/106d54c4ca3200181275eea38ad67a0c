@@ -1,0 +1,60 @@
+package mobile;
+
+import com.borland.silktest.jtf.Utils;
+
+/**
+ * Handles all actions under the Processor screen
+ * @author Brendan Dolan
+ * @date Created on: Mar 12, 2018
+ */
+public class Processor extends BaseState {
+	
+	/**
+	 * Performs a self-test
+	 */
+	public static void selfTest() {
+		// TODO
+	}
+	
+	/**
+	 * Performs weekly maintenance functions
+	 */
+	public static void weeklyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs monthly maintenance functions
+	 */
+	public static void monthlyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs the Staus LED functions
+	 */
+	public static void statusLED() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to remove instrument
+	 */
+	public static void removeInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to shutdown instrument
+	 */
+	public static void shutdownInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to restart instrument
+	 */
+	public static void restartInstrument() {
+		// TODO
+	}
+}

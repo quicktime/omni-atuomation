@@ -1,0 +1,37 @@
+1519245893140	Delete element
+1519247273315	Rename type 'putty'
+1519247515349	Rename type 'D27351_INITE'
+1519247551292	Delete element
+1519247595792	Copy package
+1519247599000	Delete element
+1519247630234	Copy package
+1519247633011	Delete element
+1519247650604	Move compilation unit
+1519247688611	Move compilation unit
+1519247692795	Delete element
+1519247814052	Move compilation unit
+1519247829553	Rename type 'D27351_InitializationErrors'
+1519250564621	Rename type 'Instrument'
+1519252738127	Delete element
+1519253072149	Delete element
+1519253562926	Delete element
+1519253586997	Rename type 'TestErrors'
+1519253597137	Rename type 'MobileErrors'
+1519254012082	Rename type 'GetTests'
+1519254046761	Rename type 'SendError'
+1519254082095	Rename method 'getError'
+1519254532171	Rename method 'getError'
+1519254682836	Delete element
+1519255043010	Delete element
+1519255095101	Rename method 'compareErrors'
+1519255125209	Rename method 'getError'
+1519255149093	Rename method 'getErrorMessages'
+1519257160724	Rename local variable 'i'
+1519257770466	Delete element
+1519326468851	Rename type 'PostmanGetError'
+1519326625797	Rename method 'postmanGetTestError'
+1519327374344	Rename method 'getErrorMessage'
+1519327609363	Rename method 'getTestError'
+1519328208936	Rename method 'debug'
+1519337913923	Rename method 'pushbutton'
+1519421731364	Move compilation unit

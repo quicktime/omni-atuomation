@@ -1,0 +1,291 @@
+import static org.junit.Assert.assertEquals;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.junit.Test;
+
+import com.borland.silktest.jtf.Desktop;
+import com.borland.silktest.jtf.MobileBaseState;
+import com.borland.silktest.jtf.Utils;
+import com.borland.silktest.jtf.common.types.Point;
+import com.microfocus.silktest.jtf.mobile.MobileButton;
+import com.microfocus.silktest.jtf.mobile.MobileDevice;
+import com.microfocus.silktest.jtf.mobile.MobileObject;
+import com.microfocus.silktest.jtf.mobile.MobileTextField;
+import com.microfocus.silktest.jtf.mobile.MobileWindow;
+
+public class Omni {
+
+	private Desktop desktop = new Desktop();
+
+	@Test
+	public void runTests() throws IOException {
+		// statementTest();
+		// baseState();
+		// siteProvisioning();
+		// userProvisioning();
+		// loginTest();
+		// userListView();
+		// handHeldSettings();
+		verifyUserDetails();
+	}
+
+	public void statementTest() {
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			// Connection con = DriverManager.getConnection("jdbc:odbc:excel");
+			Connection con = DriverManager
+					.getConnection("jdbc:odbc:Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};"
+							+ "Dbq=‪C:\\Users\\Cepheid-Admin\\Desktop\\Book1.xls;");
+			Statement sss = con.createStatement();
+			String query = "select * from [Test$]";
+			sss.execute(query);
+			ResultSet rs = sss.getResultSet();
+
+			while (rs.next()) {
+				System.out.print("Row " + rs.getRow() + ": " + rs.getString(1));
+			}
+
+		} catch (Exception e) {
+			System.out.println("Exception : " + e);
+		}
+	}
+
+	public void baseState() {
+		MobileBaseState baseState = new MobileBaseState();
+		baseState.execute(desktop);
+	}
+
+	public void siteProvisioningTest() {
+		desktop.<MobileObject>find("Device.siteProvisioning.proceedInfoArrowIcon").click();
+		desktop.<MobileTextField>find("Device.siteProvisioning.secretEditText").setText("WWK7EWF4FE7FKQAQ");
+		desktop.<MobileTextField>find("Device.siteProvisioning.serverEditText").setText("https://c360admin-stg9.cepheid.com:9082");
+		desktop.<MobileObject>find("Device.siteProvisioning.verifyOneTimePasswordIcon").click();
+		Utils.sleep(1000);
+		desktop.<MobileObject>find("Device.siteProvisioning.completeProvisioningForwardIcon").click();
+		desktop.<MobileButton>find("Device.global.button1").click();
+	}
+
+	public void userProvisioningTest() {
+		desktop.<MobileObject>find("Device.userProvisioning.beginSetupIcon").click();
+		desktop.<MobileTextField>find("Device.userProvisioning.userNameEntry").setText("c360.instadm@gmail.com");
+		desktop.<MobileObject>find("Device.userProvisioning.requestOneTimeCodeIcon").click();
+		desktop.<MobileTextField>find("Device.userProvisioning.passwordEntry").setText("Cphd123!");
+		desktop.<MobileTextField>find("Device.userProvisioning.secondFactorEntry").setText("421116");
+		desktop.<MobileObject>find("Device.userProvisioning.secondFactorProceed").click();
+		desktop.<MobileObject>find("Device.userProvisioning.text1").click();
+		desktop.<MobileObject>find("Device.userProvisioning.Brendan-EMG").click();
+		desktop.<MobileObject>find("Device.userProvisioning.toSyncSettingsButton").click();
+		desktop.waitForObject("Device.userProvisioning.goToHomeIcon", 10000);
+		desktop.<MobileObject>find("Device.userProvisioning.goToHomeIcon").click();
+	}
+
+	public void loginTest() {
+		desktop.<MobileTextField>find("Device.userProvisioning.userNameEntry").setText("c360.instadm@gmail.com");
+		desktop.<MobileTextField>find("Device.userProvisioning.passwordEntry").setText("Cphd123!");
+		desktop.<MobileObject>find("Device.userProvisioning.passwordProceed").click();
+	}
+
+	public void userListView() {
+		desktop.<MobileObject>find("Device.toolsButton").click();
+		desktop.waitForObject("Device.tools.usersIcon");
+		desktop.<MobileObject>find("Device.tools.handHeldIcon").click();
+		desktop.<MobileObject>find("Device.tools.usersIcon").click();
+		desktop.verifyAsset("RecordedVerification1");
+	}
+
+	/*
+	 * Created by Brendan Dolan Dec. 8, 2017 
+	 * verifyUserDetails is used to verify Omni User Details against expected user details from a provided .csv file
+	 */
+	@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+	public void verifyUserDetails() throws IOException {
+		desktop.<MobileObject>find("Device.toolsButton").click();
+		desktop.waitForObject("Device.tools.usersIcon");
+		desktop.<MobileObject>find("Device.tools.handHeldIcon").click();
+		desktop.<MobileObject>find("Device.tools.usersIcon").click();
+		Utils.sleep(100);
+
+		String fileName = "C:\\Users\\Cepheid-Admin\\eclipse-workspace\\tt\\src\\Book1.csv"; // expected user details
+
+		BufferedReader in;
+		in = new BufferedReader(new FileReader(fileName));
+
+		/*
+		 * Following 12 lines used to fully drag user interface to the top based on number of rows to save time
+		 */
+		BufferedReader count = new BufferedReader(new FileReader(fileName));
+		String input;
+		int rowCount = 0;
+		while ((input = count.readLine()) != null) {
+			rowCount++;
+		}
+		count.close();
+
+		for (int i = 0; i <= rowCount / 20; i++) {
+			desktop.<MobileDevice>find("Device").drag(new Point(500, 450), new Point(500, 1200));
+		}
+
+		String[] locator = { "1", "2", "3", "4", "5", "6", "7", "8" }; // Used to traverse linearLayouts
+		int i;
+		ArrayList omniUserDetails = new ArrayList();
+
+		/*
+		 * Following for loops perform the following actions:
+		 * - Adds all omni user properties to omniUserDetails ArrayList
+		 * - Reads the nextline from the csv file
+		 * - Passes the previous 2 to compareUserDetails()
+		 * 
+		 * First for loop is for rows that need drag commands. 
+		 * Second for loop is for the bottom rows that do not need drag commands.
+		 */
+		for (i = 0; i < rowCount - locator.length; i++) {
+			desktop.<MobileObject>find("Device.linearLayouts." + locator[0]).click();
+			omniUserDetails
+					.add(desktop.<MobileObject>find("Device.tools.users.userDetails.userNameTextView").getProperty("caption").toString());
+			omniUserDetails.add(desktop.<MobileObject>find("Device.tools.users.userDetails.fnTextView").getProperty("caption").toString());
+			omniUserDetails.add(desktop.<MobileObject>find("Device.tools.users.userDetails.lnTextView").getProperty("caption").toString());
+			omniUserDetails
+					.add(desktop.<MobileObject>find("Device.tools.users.userDetails.userTypeTextView").getProperty("caption").toString());
+
+			String line = null;
+			line = in.readLine();
+			Scanner scanner = new Scanner(line);
+
+			compareUserDetails(omniUserDetails, scanner);
+
+			desktop.<MobileObject>find("Device.tools.users.userDetails.userDetailBackImageView").click();
+			desktop.<MobileDevice>find("Device").drag(new Point(500, 600), new Point(500, 450));
+		}
+		for (i = 0; i < locator.length; i++) {
+			desktop.<MobileObject>find("Device.linearLayouts." + locator[i]).click();
+			omniUserDetails
+					.add(desktop.<MobileObject>find("Device.tools.users.userDetails.userNameTextView").getProperty("caption").toString());
+			omniUserDetails.add(desktop.<MobileObject>find("Device.tools.users.userDetails.fnTextView").getProperty("caption").toString());
+			omniUserDetails.add(desktop.<MobileObject>find("Device.tools.users.userDetails.lnTextView").getProperty("caption").toString());
+			omniUserDetails
+					.add(desktop.<MobileObject>find("Device.tools.users.userDetails.userTypeTextView").getProperty("caption").toString());
+
+			String line = null;
+			line = in.readLine();
+			Scanner scanner = new Scanner(line);
+
+			compareUserDetails(omniUserDetails, scanner);
+			desktop.<MobileObject>find("Device.tools.users.userDetails.userDetailBackImageView").click();
+		}
+		in.close();
+	}
+
+	/*
+	 * Created by Brendan Dolan Dec. 11, 2017
+	 * compareUserDetails compares one line of the expected user details from the scanned in .csv file with user 
+	 * details of one user in omni from the omniUserDetails ArrayList
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void compareUserDetails(ArrayList omniUserDetails, Scanner scanner) throws IOException {
+		ArrayList expectedUserDetails = new ArrayList<>();
+		expectedUserDetails.add(scanner.next());
+
+		String exp = expectedUserDetails.toString();
+		String form = exp.replaceAll(",", ", ");
+		
+		String act = omniUserDetails.toString();
+
+		System.out.println("Actual User Detail:   " + act);
+		System.out.println("Expected User Detail: " + form);
+		System.out.println("\n---------------------------------------------------------------------------\n");
+
+		assertEquals(act, form);
+		expectedUserDetails.removeAll(expectedUserDetails);
+		omniUserDetails.removeAll(omniUserDetails);
+	}
+
+	public void handHeldSettings() {
+		desktop.<MobileObject>find("Device.tools.handHeld.unlockSiteImg").click();
+	}
+
+	@Test
+	public void viewResults() {
+		desktop.<MobileObject>find("Device.testsButton").click();
+		desktop.<MobileObject>find("Device.global.android widget ImageView").click();
+		desktop.<MobileObject>find("Device.testsButton").click();
+		desktop.<MobileObject>find("Device.viewResults.viewResultsContainer").click();
+		desktop.<MobileObject>find("Device.testsButton").click();
+		desktop.<MobileObject>find("Device.viewResults.viewResultsText").click();
+		desktop.<MobileObject>find("Device.global.android widget ImageView").click();
+		desktop.<MobileObject>find("Device.viewResults.todaysTest").click();
+		desktop.<MobileObject>find("Device.viewResults.yesterdaysTest").click();
+		desktop.<MobileObject>find("Device.viewResults.thisWeeksTest").click();
+		desktop.<MobileObject>find("Device.viewResults.thisMonthsTest").click();
+		desktop.<MobileObject>find("Device.viewResults.othersTest").click();
+		desktop.<MobileObject>find("Device.viewResults.title_template").click();
+		desktop.<MobileObject>find("Device.viewResults.alertTitle").click();
+		desktop.<MobileObject>find("Device.viewResults.scrollView").click();
+		desktop.<MobileObject>find("Device.viewResults.message").click();
+		desktop.<MobileObject>find("Device.linearLayouts.1").click();
+		desktop.<MobileObject>find("Device.viewResults.sampleIdSearchIcon").click();
+		desktop.<MobileTextField>find("Device.viewResults.sampleIdSearchText").setText("");
+		desktop.<MobileObject>find("Device.linearLayouts.2").click();
+		desktop.<MobileObject>find("Device.global.android widget ImageView").click();
+		desktop.<MobileTextField>find("Device.viewResults.familyNameSearchText").setText("");
+		desktop.<MobileObject>find("Device.viewResults.givenNameSearchIcon").click();
+		desktop.<MobileObject>find("Device.linearLayouts.3").click();
+		desktop.<MobileTextField>find("Device.viewResults.givenNameSearchText").setText("");
+		desktop.<MobileObject>find("Device.linearLayouts.4").click();
+		desktop.<MobileObject>find("Device.global.android widget ImageView4").click();
+		desktop.<MobileTextField>find("Device.viewResults.patientIdSearchText").setText("");
+		desktop.<MobileObject>find("Device.linearLayouts.5").click();
+		desktop.<MobileObject>find("Device.viewResults.buttonPanel").click();
+		desktop.<MobileObject>find("Device.viewResults.ageSearchIcon").click();
+		desktop.<MobileTextField>find("Device.viewResults.ageSearchText").setText("");
+		desktop.<MobileTextField>find("Device.viewResults.Dec").setText("");
+		desktop.<MobileTextField>find("Device.viewResults.12").setText("");
+		desktop.<MobileTextField>find("Device.viewResults.2017").setText("");
+		desktop.<MobileButton>find("Device.global.button1").click();
+		desktop.<MobileObject>find("Device.linearLayouts.6").click();
+		desktop.<MobileTextField>find("Device.viewResults.numberpicker_input").setText("");
+		desktop.<MobileObject>find("Device.viewResults.title_template").click();
+		desktop.<MobileObject>find("Device.viewResults.dateRangePickerBody").click();
+		desktop.<MobileObject>find("Device.viewResults.fromLabel").click();
+		desktop.<MobileObject>find("Device.linearLayouts.1").click();
+		desktop.<MobileObject>find("Device.linearLayouts.2").click();
+		desktop.<MobileObject>find("Device.viewResults.toLabel").click();
+		desktop.<MobileObject>find("Device.linearLayouts.4").click();
+		desktop.<MobileObject>find("Device.global.android widget NumberPicker").click();
+		desktop.<MobileObject>find("Device.global.android widget NumberPicker5").click();
+		desktop.<MobileObject>find("Device.global.android widget NumberPicker6").click();
+		desktop.<MobileButton>find("Device.global.button1").click();
+		desktop.<MobileObject>find("Device.viewResults.buttonPanel").click();
+		desktop.<MobileObject>find("Device.viewResults.startTimeCol").click();
+		desktop.<MobileObject>find("Device.viewResults.sampleIdCol").click();
+		desktop.<MobileObject>find("Device.viewResults.assayCol").click();
+		desktop.<MobileObject>find("Device.viewResults.familyNameCol").click();
+		desktop.<MobileObject>find("Device.viewResults.givenNameCol").click();
+		desktop.<MobileObject>find("Device.viewResults.sampleIdCol").click();
+		desktop.<MobileObject>find("Device.viewResults.birthdateCol").click();
+		desktop.<MobileObject>find("Device.viewResults.patientIdCol").click();
+		desktop.<MobileObject>find("Device.viewResults.givenNameCol").click();
+	}
+
+	@Test
+	public void dd() {
+		desktop.<MobileObject>find("Device.testsButton").click();
+		desktop.<MobileObject>find("Device.currentUserButton").click();
+		desktop.<MobileObject>find("Device.toolsButton").click();
+		desktop.<MobileObject>find("Device.infoButton").click();
+		desktop.<MobileButton>find("Device.global.button2").click();
+	}
+
+	@Test
+	public void instrument() {
+
+	}
+}

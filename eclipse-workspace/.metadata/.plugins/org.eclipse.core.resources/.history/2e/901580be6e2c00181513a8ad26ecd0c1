@@ -1,0 +1,95 @@
+package mobile;
+
+import com.borland.silktest.jtf.Desktop;
+import com.borland.silktest.jtf.MobileBaseState;
+import com.borland.silktest.jtf.TestObject;
+import com.microfocus.silktest.jtf.mobile.MobileButton;
+import com.microfocus.silktest.jtf.mobile.MobileObject;
+import com.microfocus.silktest.jtf.mobile.MobileTextField;
+import com.microfocus.silktest.jtf.mobile.MobileDevice;
+import com.borland.silktest.jtf.common.types.Point;
+
+/**
+ * Handles the MobileBaseState, desktop, and object finds (silk functions) for the mobile device
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class BaseState {
+
+	/**
+	 * Mobile device's desktop object
+	 */
+	private static Desktop desktop = new Desktop();
+
+	/**
+	 * sets the MobileBaseState
+	 */
+	public static void baseState() {
+		MobileBaseState baseState = new MobileBaseState(); // MobileBaseState object
+		baseState.execute(getDesktop()); // executes the MobileBaseState based on the getter
+	}
+
+	/**
+	 * Gets the current desktop
+	 * @return desktop
+	 */
+	public static Desktop getDesktop() {
+		return desktop;
+	}
+
+	/**
+	 * Sets the desktop
+	 * @param desktop - desktop to set BaseState.desktop to
+	 */
+	public void setDesktop(Desktop desktop) {
+		BaseState.desktop = desktop;
+	}
+	
+	/**
+	 * finds the passed-in mobileObject locator
+	 * @param locator - MobileObject locator to find
+	 * @return the found MobileObject object
+	 */
+	public static MobileObject mobileObject(String locator) {
+			return desktop.<MobileObject>find(locator);
+	}
+	
+	/**
+	 * finds the passed-in MobileTextField locator
+	 * @param locator - MobileTextField locator to find
+	 * @return the found MobileTextField object
+	 */
+	public static MobileTextField mobileTextField(String locator) {
+		return desktop.<MobileTextField>find(locator);
+	}
+	
+	/**
+	 * finds the passed-in MobileButton locator
+	 * @param locator - MobileButton locator to find
+	 * @return the found MobileButton object
+	 */
+	public static MobileButton mobileButton(String locator) {
+		return desktop.<MobileButton>find(locator);
+	}
+	
+	/**
+	 * finds the "Device" MobileDevice locator
+	 * @return the found MobileDevice object
+	 */
+	public static MobileDevice mobileDevice() {
+		return desktop.<MobileDevice>find("Device");
+	}
+	
+	/**
+	 * Determines whether passed-in locator exists on the current screen
+	 * @param locator - locator to determine whether or not it exists
+	 * @return boolean for if locator exists or not
+	 */
+	public static boolean exists(String locator) {
+		return desktop.exists(locator);
+	}
+	
+	public static TestObject waitForObject(String locator) {
+		return getDesktop().waitForObject(locator);
+	}
+}

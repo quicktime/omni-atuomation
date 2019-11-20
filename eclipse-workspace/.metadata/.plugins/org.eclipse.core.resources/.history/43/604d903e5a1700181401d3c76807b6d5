@@ -1,0 +1,14 @@
+package sheet;
+
+/**
+ * Handles sheet errors
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class SheetTestErrors {
+
+	public static String getError() {
+		String string = "";
+		return string;
+	}
+}

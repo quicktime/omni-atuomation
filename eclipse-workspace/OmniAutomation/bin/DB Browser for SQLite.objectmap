@@ -1,0 +1,12 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="DB Browser for SQLite" locator="/Window[@caption='DB Browser for SQLite']">
+    <ObjectMapEntry id="Choose a database file" locator="//Dialog[@caption='Choose a database file']">
+      <ObjectMapEntry id="Cancel" locator="//PushButton[@caption='Cancel']" />
+      <ObjectMapEntry id="File name" locator="//TextField[@caption='File name:']" />
+      <ObjectMapEntry id="Open" locator="//PushButton[@caption='Open']" />
+      <ObjectMapEntry id="Tree" locator="//Tree" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Open Database" locator="//PushButton[@caption='Open Database']" />
+    <ObjectMapEntry id="title bar" locator="//AccessibleControl[@role='title bar']" />
+  </ObjectMapEntry>
+</ObjectMap>

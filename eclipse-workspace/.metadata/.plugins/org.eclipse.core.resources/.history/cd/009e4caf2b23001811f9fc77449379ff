@@ -1,0 +1,91 @@
+package mobile;
+
+import com.borland.silktest.jtf.Desktop;
+import com.borland.silktest.jtf.Utils;
+import com.borland.silktest.jtf.common.types.Point;
+import com.microfocus.silktest.jtf.mobile.MobileObject;
+import org.junit.Assert;
+import com.microfocus.silktest.jtf.mobile.MobileTextField;
+
+import testcontrol.Main;
+import testcontrol.D27351.InstrumentErrors;
+import com.microfocus.silktest.jtf.mobile.MobileDevice;
+
+/**
+ * Handles test workflows
+ * @author Brendan Dolan
+ * @date Created on: Feb 22, 2018
+ */
+public class MobileTests extends BaseState {
+	
+	public static String sampleID = new String();
+
+
+	/**
+	 * Clicks the tests button
+	 */
+	public static void clickHome() {
+		mobileObject("Device.testsButton").click();
+	}
+	
+	/**
+	 * Generically starts test. Randomly generates sample ID, picks the first installed assay, description "automation"
+	 */
+	public static void startTest() {
+		MobileWaits.instrumentReady();
+		Main.debug.LOG("Starting test...");
+		clickHome();
+		mobileObject("Device.startNewTestImage").click();
+		if (getDesktop().exists("Device.global.button1")) {
+			mobileButton("Device.global.button1").click();
+			MobileWaits.instrumentReady();
+		}
+		mobileObject("Device.sampleBarcodeGenerateIcon").click();
+		setSampleID();
+
+		mobileObject("Device.userProvisioning.text1").click();
+		mobileObject("Device.userProvisioning.text1").click();
+		mobileTextField("Device.sampleTypeOtherDescription").setText("automation");
+		mobileObject("Device.toPatientDetailsButton").click();
+		mobileObject("Device.toCartridgeDetailsButton").click();
+		mobileDevice().sleep();
+		mobileDevice().wakeUp();
+		Utils.sleep(1000); // TODO enhance sleep (waitForObject)
+		mobileDevice().swipe(new Point(200, 900), new Point(700, 900));
+		getDesktop().waitForObject("Device.expirationDateImg", 2000000);
+		mobileObject("Device.toSamplePrepButton").click();
+		mobileObject("Device.toProcessDetailsButton").click();
+		mobileObject("Device.android widget RelativeLayout").click();
+	}
+	
+	public static void startTest(String assay) {
+		clickHome();
+		mobileObject("Device.startNewTestImage").click();
+		if (getDesktop().exists("Device.global.button1")) {
+			mobileButton("Device.global.button1").click();
+			MobileWaits.instrumentReady();
+		}
+		mobileObject("Device.sampleBarcodeGenerateIcon").click();
+		setSampleID();
+		mobileObject("Device.userProvisioning.text1").click();
+		mobileObject("Device." + assay).click();
+		mobileTextField("Device.sampleTypeOtherDescription").setText("automation");
+		mobileObject("Device.toPatientDetailsButton").click();
+		mobileObject("Device.toCartridgeDetailsButton").click();
+		mobileDevice().sleep();
+		mobileDevice().wakeUp();
+		Utils.sleep(1000); // TODO enhance sleep (waitForObject)
+		mobileDevice().swipe(new Point(200, 900), new Point(700, 900));
+		getDesktop().waitForObject("Device.expirationDateImg", 2000000);
+		mobileObject("Device.toSamplePrepButton").click();
+		mobileObject("Device.toProcessDetailsButton").click();
+		mobileObject("Device.android widget RelativeLayout").click();
+	}
+	
+	/**
+	 * Gets sample ID after sample ID generation
+	 */
+	public static void setSampleID() {
+		sampleID = mobileTextField("Device.sampleIdText").getText();
+	}
+}

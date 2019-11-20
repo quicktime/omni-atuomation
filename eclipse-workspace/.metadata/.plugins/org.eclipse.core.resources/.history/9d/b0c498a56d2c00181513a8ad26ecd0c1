@@ -1,0 +1,16 @@
+package mobile;
+
+/**
+ * Handles all Admin Actions functions
+ * @author Brendan Dolan
+ * @date Created on: Mar 12, 2018
+ */
+public class AdminActions {
+
+	/**
+	 * performs a self-test
+	 */
+	public static void selfTest() {
+		// TODO
+	}
+}

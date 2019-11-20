@@ -1,0 +1,122 @@
+package testcontrol.D27351;
+
+import helper.Errors;
+import instrument.Putty;
+import mobile.StartTest;
+import mobile.MobileTestErrors;
+import mobile.MobileWaits;
+import postman.PostmanGetInstrumentError;
+import postman.PostmanSendError;
+import sheet.LineCount;
+import sheet.SheetTestErrors;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+
+import com.borland.silktest.jtf.Utils;
+
+import c360.c360Errors;
+
+/**
+ * Handles all test cases for the Instrument Errors tab
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class InstrumentErrors {
+	
+	/**
+	 * Runs test cases ie1 through ie7
+	 */
+	public static void ie1_ie7Run() {
+		// Postman/InitCode, ErrorCode, ErrorMessage, ErrorDetails
+		String sheet = "./sheets/instrument error/instrument errors/ie1_ie7.csv";
+		try {
+			for (int line = 0; line < LineCount.lineCount(sheet); line++) { // loops # of rows (excluding header)
+				StartTest.startTest();
+				MobileWaits.testStarts();
+				Utils.sleep(1000000);
+				PostmanSendError.sendError(SheetTestErrors.getErrorSendCode(sheet, line));
+				MobileWaits.errorAppears();
+				Errors.compareErrorMessages(MobileTestErrors.getErrorMessageButton(), SheetTestErrors.getErrorMessage(sheet, line));
+				MobileWaits.testCompletion();
+				Errors.compareErrors(MobileTestErrors.getErrors(), SheetTestErrors.getErrors(sheet, line));
+				PostmanSendError.sendError("0");
+				Putty.restart();
+				MobileWaits.instrumentReady();
+				StartTest.startTest();
+				MobileWaits.testCompletion();
+				assertFalse(MobileTestErrors.errorsExist());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Runs test cases ie8 through ie12
+	 */
+	public static void ie8_ie12Run() {
+		String sheet = "./sheets/instrument error/instrument errors/ie8_ie12.csv";
+		try {
+			for (int line = 0; line < LineCount.lineCount(sheet); line++) {
+				StartTest.startTest();
+				MobileWaits.errorAppears();
+				assertTrue("No error appeared", MobileTestErrors.errorsExist());
+				MobileWaits.testCompletion();
+				Errors.compareErrors(MobileTestErrors.getErrors(), SheetTestErrors.getErrors(sheet, line));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Runs test case ie16
+	 */
+	public static void ie16Run() {
+		String sheet = "./sheets/instrument error/instrument errors/ie16.csv";
+		try {
+			for (int line = 0; line < LineCount.lineCount(sheet); line++) {
+				PostmanSendError.sendError(SheetTestErrors.getErrorCode(sheet, line));
+				StartTest.startTest();
+				MobileWaits.testStarts();
+				Errors.compareErrors(MobileTestErrors.getErrors(), SheetTestErrors.getErrors(sheet, line));
+				assertTrue("No error appears in c360", c360Errors.errorsExist());
+				Errors.compareErrorCode(PostmanGetInstrumentError.getErrorCode(), SheetTestErrors.getErrorCode(sheet, line));
+				PostmanSendError.sendError("0");
+				Putty.restart();
+				MobileWaits.instrumentReady();
+				StartTest.startTest();
+				MobileWaits.testCompletion();
+				assertFalse(MobileTestErrors.errorsExist());				
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Runs test cases ie17 through ie46
+	 */
+	public static void ie17_ie46Run() {
+		String sheet = "./sheets/instrument error/instrument errors/ie17_ie46.csv";
+		try {
+			for (int line = 0; line < LineCount.lineCount(sheet); line++) {
+				PostmanSendError.sendError(SheetTestErrors.getErrorCode(sheet, line));
+				StartTest.startTest();
+				MobileWaits.testCompletion();
+				Errors.compareErrors(MobileTestErrors.getErrors(), SheetTestErrors.getErrors(sheet, line));
+				PostmanSendError.sendError("0");
+				Putty.restart();
+				MobileWaits.instrumentReady();
+				StartTest.startTest();
+				MobileWaits.testCompletion();
+				assertFalse(MobileTestErrors.errorsExist());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

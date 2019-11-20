@@ -1,0 +1,11 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2018.04.10 11:49:20 =~=~=~=~=~=~=~=~=~=~=~=
+login as: root
+root@10.11.14.2's password: 
+Last login: Tue Apr 10 11:47:30 2018 from 10.11.14.1
+
+Cepheid MEL for VAR-SOM-MX6 August 18, 2017
+
+root@2000000181:~# ps -ef|grep GxNext
+root     29237     1  3 11:07 ?        00:01:32 ./GxNext
+root     32170 32159  0 11:48 pts/10   00:00:00 grep GxNext
+root@2000000181:~# 

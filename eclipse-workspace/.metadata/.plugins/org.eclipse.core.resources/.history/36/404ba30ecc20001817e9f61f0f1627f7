@@ -1,0 +1,50 @@
+package helper;
+
+/**
+ * Handles debug messages.
+ * @author Brendan Dolan
+ * @date Created on: Feb 22, 2018
+ */
+public class DEBUG {
+
+	public boolean enabled;
+	
+	/**
+	 * Enables or disables debug mode based on {@link testcontrol.Main}
+	 * @param enabled
+	 */
+	public DEBUG(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
+	/**
+	 * Logs a debug messsage with a given string to std out.
+	 * Format: "class.method():line# --- provided string"
+	 * @param string
+	 */
+	public void LOG(String string) {
+		if (enabled == true) {
+		    String fullClassName = Thread.currentThread().getStackTrace()[2].getClassName();
+		    String className = fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+		    String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+		    int lineNumber = Thread.currentThread().getStackTrace()[2].getLineNumber();
+		
+		    System.out.println(className + "." + methodName + "():" + lineNumber + " --- " + string);
+		}
+	}
+	
+	/**
+	 * Logs a debug message to std out.
+	 * Format: "class.method():line#
+	 */
+	public void LOG() {
+		if (enabled == true) {
+		    String fullClassName = Thread.currentThread().getStackTrace()[2].getClassName();
+		    String className = fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+		    String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+		    int lineNumber = Thread.currentThread().getStackTrace()[2].getLineNumber();
+		
+		    System.out.println(className + "." + methodName + "():" + lineNumber);
+		}
+	}
+}

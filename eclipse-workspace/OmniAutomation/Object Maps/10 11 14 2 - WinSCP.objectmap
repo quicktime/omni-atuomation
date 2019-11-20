@@ -1,0 +1,52 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="10 11 14 2 - WinSCP" locator="/Window[@caption='10.11.14.2 - WinSCP']">
+    <ObjectMapEntry id="10 11 14 2" locator="//Window[@caption='10.11.14.2']" />
+    <ObjectMapEntry id="backup" locator="//AccessibleControl[@caption='backup']" />
+    <ObjectMapEntry id="Download" locator="//Window[@caption='Download']">
+      <ObjectMapEntry id="Confirm" locator="//Window[@caption='Confirm']">
+        <ObjectMapEntry id="OK" locator="//PushButton[@caption='OK']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="OK" locator="//PushButton[@caption='OK']" />
+      <ObjectMapEntry id="TextField" locator="//TextField" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Downloading" locator="//Window[@caption='0% Downloading']">
+      <ObjectMapEntry id="Confirm" locator="//Window[@caption='Confirm']">
+        <ObjectMapEntry id="Yes" locator="//AccessibleControl[@caption='Yes']" />
+      </ObjectMapEntry>
+    </ObjectMapEntry>
+    <ObjectMapEntry id="epsilon bak" locator="//AccessibleControl[@caption='epsilon.bak']" />
+    <ObjectMapEntry id="epsilon db" locator="//AccessibleControl[@caption='epsilon.db']" />
+    <ObjectMapEntry id="Epsilon_Java_jar-1" locator="//AccessibleControl[@caption='Epsilon_Java_jar-1.0']" />
+    <ObjectMapEntry id="epsilon-java" locator="//AccessibleControl[@caption='epsilon-java']" />
+    <ObjectMapEntry id="Find Files" locator="//PushButton[@caption='Find Files']" />
+    <ObjectMapEntry id="large file" locator="//AccessibleControl[@caption='large.file']" />
+    <ObjectMapEntry id="LogFile" locator="//AccessibleControl[@caption='LogFile.txt']" />
+    <ObjectMapEntry id="logs" locator="//AccessibleControl[@caption='logs']" />
+    <ObjectMapEntry id="nohup-run-epsilon-java sh" locator="//AccessibleControl[@caption='nohup-run-epsilon-java.sh']" />
+    <ObjectMapEntry id="omni-data" locator="//AccessibleControl[@caption='omni-data']" />
+    <ObjectMapEntry id="omni-epsilon log" locator="//AccessibleControl[@caption='omni-epsilon.log']" />
+    <ObjectMapEntry id="Open directory" locator="//Window[@caption='Open directory']">
+      <ObjectMapEntry id="OK" locator="//PushButton[@caption='OK']" />
+      <ObjectMapEntry id="TextField" locator="//TextField" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Open Directory Bookmark" locator="//PushButton[@caption='Open Directory/Bookmark']" />
+    <ObjectMapEntry id="out" locator="//AccessibleControl[@caption='out']" />
+    <ObjectMapEntry id="Root Directory" locator="//PushButton[@caption='Root Directory']" />
+    <ObjectMapEntry id="Root Directory2" locator="//PushButton[@caption='Root Directory'][2]" />
+    <ObjectMapEntry id="sandbox" locator="//AccessibleControl[@caption='sandbox']" />
+    <ObjectMapEntry id="TDirView" locator="//Control[@windowClassName='TDirView']" />
+    <ObjectMapEntry id="TUnixDirView" locator="//Control[@windowClassName='TUnixDirView']" />
+    <ObjectMapEntry id="Upload" locator="//Window[@caption='Upload']">
+      <ObjectMapEntry id="Confirm" locator="//Window[@caption='Confirm']">
+        <ObjectMapEntry id="OK" locator="//PushButton[@caption='OK']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="OK" locator="//PushButton[@caption='OK']" />
+      <ObjectMapEntry id="TextField" locator="//TextField" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Uploading" locator="//Window[@caption='0% Uploading']">
+      <ObjectMapEntry id="Confirm" locator="//Window[@caption='Confirm']">
+        <ObjectMapEntry id="Yes" locator="//AccessibleControl[@caption='Yes']" />
+      </ObjectMapEntry>
+    </ObjectMapEntry>
+  </ObjectMapEntry>
+</ObjectMap>

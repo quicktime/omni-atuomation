@@ -1,0 +1,344 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Device" locator="/MobileDevice">
+    <ObjectMapEntry id="android widget FrameLayout" locator="//MobileWindow[@className='android.widget.FrameLayout']" />
+    <ObjectMapEntry id="assays" locator="">
+      <ObjectMapEntry id="Xpert HIV-1 Qual, Version 2" locator="//MobileObject[@caption='Xpert HIV-1 Qual, Version:2']" />
+      <ObjectMapEntry id="Xpert MTB-RIF Assay G4, Version 5" locator="//MobileObject[@caption='Xpert MTB-RIF Assay G4, Version:5']" />
+      <ObjectMapEntry id="Xpert MTB-RIF Ultra, Version 1" locator="//MobileObject[@caption='Xpert MTB-RIF Ultra, Version:1']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="cartridgeNFCTagGenerator" locator="">
+      <ObjectMapEntry id="barcodeFormatEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/barcodeFormatEditButton']" />
+      <ObjectMapEntry id="barcodeFormatEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/barcodeFormatEditText']" />
+      <ObjectMapEntry id="bccEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/bccEditButton']" />
+      <ObjectMapEntry id="bccEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/bccEditText']" />
+      <ObjectMapEntry id="expirationEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/expirationEditButton']" />
+      <ObjectMapEntry id="expirationWeekEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/expirationWeekEditText']" />
+      <ObjectMapEntry id="expirationYearEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/expirationYearEditText']" />
+      <ObjectMapEntry id="ignoreBccStatusCheckBox" locator="//MobileObject[@resource-id='cepheid.com.cartridgenfctaggenerator:id/ignoreBccStatusCheckBox']" />
+      <ObjectMapEntry id="lspEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/lspEditText']" />
+      <ObjectMapEntry id="productCodeEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/productCodeEditButton']" />
+      <ObjectMapEntry id="productCodeEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/productCodeEditText']" />
+      <ObjectMapEntry id="reagentLotEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/reagentLotEditButton']" />
+      <ObjectMapEntry id="reagentLotEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/reagentLotEditText']" />
+      <ObjectMapEntry id="scanNfcBtn" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/scanNfcBtn']" />
+      <ObjectMapEntry id="showTagAsString" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/showTagAsString']" />
+      <ObjectMapEntry id="statusFlagEditButton" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/statusFlagEditButton']" />
+      <ObjectMapEntry id="unused" locator="//MobileObject[@resource-id='cepheid.com.cartridgenfctaggenerator:id/unused']" />
+      <ObjectMapEntry id="used" locator="//MobileObject[@resource-id='cepheid.com.cartridgenfctaggenerator:id/used']" />
+      <ObjectMapEntry id="verifyWrite" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/verifyWrite']" />
+      <ObjectMapEntry id="wktIdEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/wktIdEditText']" />
+      <ObjectMapEntry id="wktTnfEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/wktTnfEditText']" />
+      <ObjectMapEntry id="wktTypeEditText" locator="//MobileTextField[@resource-id='cepheid.com.cartridgenfctaggenerator:id/wktTypeEditText']" />
+      <ObjectMapEntry id="writeNfcTag" locator="//MobileButton[@resource-id='cepheid.com.cartridgenfctaggenerator:id/writeNfcTag']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="cartridgeNFCTagGeneratorApp" locator="//MobileObject[@content-desc='CartridgeNFCTagGenerator']" />
+    <ObjectMapEntry id="currentUser" locator="">
+      <ObjectMapEntry id="changePasswordButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/changePasswordButton']" />
+      <ObjectMapEntry id="currentUserButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/currentUserButton']" />
+      <ObjectMapEntry id="newPasswordConfirmEdit" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/newPasswordConfirmEdit']" />
+      <ObjectMapEntry id="newPasswordEdit" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/newPasswordEdit']" />
+      <ObjectMapEntry id="passwordEdit" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/passwordEdit']" />
+      <ObjectMapEntry id="userName" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userName']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="global" locator="">
+      <ObjectMapEntry id="backIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/backIcon']" />
+      <ObjectMapEntry id="button1" locator="//MobileButton[@resource-id='android:id/button1']" />
+      <ObjectMapEntry id="button2" locator="//MobileButton[@resource-id='android:id/button2']" />
+      <ObjectMapEntry id="cancelButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/cancelButton']" />
+      <ObjectMapEntry id="dialogs" locator="">
+        <ObjectMapEntry id="alertTitle" locator="//MobileObject[@resource-id='android:id/alertTitle']" />
+        <ObjectMapEntry id="buttonPanel" locator="//MobileObject[@resource-id='android:id/buttonPanel']" />
+        <ObjectMapEntry id="message" locator="//MobileObject[@resource-id='android:id/message']" />
+        <ObjectMapEntry id="title_template" locator="//MobileObject[@resource-id='android:id/title_template']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="ImageView2" locator="//MobileObject[@className='android.widget.ImageView'][2]" />
+      <ObjectMapEntry id="ImageView4" locator="//MobileObject[@className='android.widget.ImageView'][4]" />
+      <ObjectMapEntry id="ImageView6" locator="//MobileObject[@className='android.widget.ImageView'][6]" />
+      <ObjectMapEntry id="LinearLayout" locator="//MobileObject[@className='android.widget.LinearLayout'][6]" />
+      <ObjectMapEntry id="NumberPicker" locator="//MobileObject[@className='android.widget.NumberPicker'][4]" />
+      <ObjectMapEntry id="NumberPicker5" locator="//MobileObject[@className='android.widget.NumberPicker'][5]" />
+      <ObjectMapEntry id="NumberPicker6" locator="//MobileObject[@className='android.widget.NumberPicker'][6]" />
+      <ObjectMapEntry id="RelativeLayout11" locator="//MobileObject[@className='android.widget.RelativeLayout'][11]" />
+      <ObjectMapEntry id="RelativeLayout16" locator="//MobileObject[@className='android.widget.RelativeLayout'][16]" />
+      <ObjectMapEntry id="RelativeLayout7" locator="//MobileObject[@className='android.widget.RelativeLayout'][7]" />
+      <ObjectMapEntry id="RelativeLayout9" locator="//MobileObject[@className='android.widget.RelativeLayout'][9]" />
+      <ObjectMapEntry id="ScrollView" locator="//MobileObject[@className='android.widget.ScrollView']" />
+      <ObjectMapEntry id="text1" locator="//MobileObject[@resource-id='android:id/text1']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="icon" locator="//MobileObject[@resource-id='android:id/icon']" />
+    <ObjectMapEntry id="info" locator="">
+      <ObjectMapEntry id="infoButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/infoButton']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="NFCTools" locator="">
+      <ObjectMapEntry id="Write" locator="">
+        <ObjectMapEntry id="AddARecord" locator="">
+          <ObjectMapEntry id="Text" locator="">
+            <ObjectMapEntry id="enterText" locator="//MobileTextField[@resource-id='com.wakdev.wdnfc:id/myTextRecord']" />
+            <ObjectMapEntry id="OKButton" locator="//MobileButton[@caption='OK']" />
+          </ObjectMapEntry>
+          <ObjectMapEntry id="TextObject" locator="//MobileObject[@caption='Text']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="AddARecordButton" locator="//MobileButton[@caption='Add a record']" />
+        <ObjectMapEntry id="MoreOptions" locator="">
+          <ObjectMapEntry id="ClearRecordList" locator="//MobileObject[@caption='Clear record list']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="MoreOptionsButton" locator="//MobileButton[@caption='More options']" />
+        <ObjectMapEntry id="WriteButton" locator="//MobileButton[@resource-id='com.wakdev.wdnfc:id/write_button']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="WriteObject" locator="//MobileObject[@caption='Write']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="NFCToolsApp" locator="//MobileObject[@content-desc='NFC Tools']" />
+    <ObjectMapEntry id="omniApp" locator="//MobileObject[@content-desc='Omni']" />
+    <ObjectMapEntry id="siteProvisioning" locator="">
+      <ObjectMapEntry id="completeProvisioningForwardIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/completeProvisioningForwardIcon']" />
+      <ObjectMapEntry id="proceedInfoArrowIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/proceedInfoArrowIcon']" />
+      <ObjectMapEntry id="secretEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/secretEditText']" />
+      <ObjectMapEntry id="serverEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/serverEditText']" />
+      <ObjectMapEntry id="verifyOneTimePasswordText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/verifyOneTimePasswordText']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="tests" locator="">
+      <ObjectMapEntry id="active_list_fragment_row" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/active_list_fragment_row']" />
+      <ObjectMapEntry id="activeTestList" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/activeTestList']" />
+      <ObjectMapEntry id="collectionDateEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/collectionDateEditText']" />
+      <ObjectMapEntry id="endTimeImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/endTimeImg']" />
+      <ObjectMapEntry id="expirationDateImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/expirationDateImg']" />
+      <ObjectMapEntry id="notesEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/notesEditText']" />
+      <ObjectMapEntry id="patient" locator="">
+        <ObjectMapEntry id="addressEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/addressEditText']" />
+        <ObjectMapEntry id="dateOfBirthEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/dateOfBirthEditText']" />
+        <ObjectMapEntry id="familyNameEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/familyNameEditText']" />
+        <ObjectMapEntry id="gender" locator="">
+          <ObjectMapEntry id="Female" locator="//MobileObject[@caption='Female']" />
+          <ObjectMapEntry id="None" locator="//MobileObject[@caption='None']" />
+          <ObjectMapEntry id="Other" locator="//MobileObject[@caption='Other']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="givenNameEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/givenNameEditText']" />
+        <ObjectMapEntry id="patientIdEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/patientIdEditText']" />
+        <ObjectMapEntry id="selectPatientEthnicity" locator="//MobileObject[@caption='Select patient ethnicity']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="progressLevel" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/progressLevel']" />
+      <ObjectMapEntry id="sampleBarcodeGenerateIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/sampleBarcodeGenerateIcon']" />
+      <ObjectMapEntry id="sampleIdColumnValue" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/sampleIdColumnValue']" />
+      <ObjectMapEntry id="sampleIdText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/sampleIdText']" />
+      <ObjectMapEntry id="sampleTypeOtherDescription" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/sampleTypeOtherDescription']" />
+      <ObjectMapEntry id="specimen" locator="//MobileObject[@caption='Specimen']" />
+      <ObjectMapEntry id="specimenList" locator="">
+        <ObjectMapEntry id="negativeControl1" locator="//MobileObject[@caption='Negative Control 1']" />
+        <ObjectMapEntry id="negativeControl2" locator="//MobileObject[@caption='Negative Control 2']" />
+        <ObjectMapEntry id="negativeControl3" locator="//MobileObject[@caption='Negative Control 3']" />
+        <ObjectMapEntry id="positiveControl1" locator="//MobileObject[@caption='Positive Control 1']" />
+        <ObjectMapEntry id="positiveControl2" locator="//MobileObject[@caption='Positive Control 2']" />
+        <ObjectMapEntry id="positiveControl3" locator="//MobileObject[@caption='Positive Control 3']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="startNewTestImage" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/startNewTestImage']" />
+      <ObjectMapEntry id="testsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/testsButton']" />
+      <ObjectMapEntry id="toCartridgeDetailsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toCartridgeDetailsButton']" />
+      <ObjectMapEntry id="toPatientDetailsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toPatientDetailsButton']" />
+      <ObjectMapEntry id="toProcessDetailsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toProcessDetailsButton']" />
+      <ObjectMapEntry id="toSamplePrepButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toSamplePrepButton']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="tools" locator="">
+      <ObjectMapEntry id="handHeld" locator="">
+        <ObjectMapEntry id="androidIdContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/androidIdContainer']" />
+        <ObjectMapEntry id="androidIdImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/androidIdImg']" />
+        <ObjectMapEntry id="androidIdText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/androidIdText']" />
+        <ObjectMapEntry id="downloadGxmContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/downloadGxmContainer']" />
+        <ObjectMapEntry id="downloadGxmLeftImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/downloadGxmLeftImg']" />
+        <ObjectMapEntry id="downloadGxmRightImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/downloadGxmRightImg']" />
+        <ObjectMapEntry id="downloadGxmText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/downloadGxmText']" />
+        <ObjectMapEntry id="enableHotspotButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/enableHotspotButton']" />
+        <ObjectMapEntry id="handheldWifiImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/handheldWifiImg']" />
+        <ObjectMapEntry id="idleTimeImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/idleTimeImg']" />
+        <ObjectMapEntry id="idleTimeoutContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/idleTimeoutContainer']" />
+        <ObjectMapEntry id="idleTimeOutValue" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/idleTimeOutValue']" />
+        <ObjectMapEntry id="idleTimeOutValueLabel" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/idleTimeOutValueLabel']" />
+        <ObjectMapEntry id="imeiContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/imeiContainer']" />
+        <ObjectMapEntry id="imeiImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/imeiImg']" />
+        <ObjectMapEntry id="imeiText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/imeiText']" />
+        <ObjectMapEntry id="personalHotspotSwitch" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/personalHotspotSwitch']" />
+        <ObjectMapEntry id="releaseDateContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/releaseDateContainer']" />
+        <ObjectMapEntry id="releaseDateImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/releaseDateImg']" />
+        <ObjectMapEntry id="releaseDateText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/releaseDateText']" />
+        <ObjectMapEntry id="restartAppContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/restartAppContainer']" />
+        <ObjectMapEntry id="restartAppImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/restartAppImg']" />
+        <ObjectMapEntry id="restartAppText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/restartAppText']" />
+        <ObjectMapEntry id="restartRightAppImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/restartRightAppImg']" />
+        <ObjectMapEntry id="siteImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/siteImg']" />
+        <ObjectMapEntry id="siteSelectionContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/siteSelectionContainer']" />
+        <ObjectMapEntry id="siteSelectionText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/siteSelectionText']" />
+        <ObjectMapEntry id="ssidContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/ssidContainer']" />
+        <ObjectMapEntry id="ssidEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/ssidEditText']" />
+        <ObjectMapEntry id="ssidPassphraseEditText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/ssidPassphraseEditText']" />
+        <ObjectMapEntry id="startHotspotOnBootContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/startHotspotOnBootContainer']" />
+        <ObjectMapEntry id="syncNowImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/syncNowImg']" />
+        <ObjectMapEntry id="syncTimeContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/syncTimeContainer']" />
+        <ObjectMapEntry id="syncTimeImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/syncTimeImg']" />
+        <ObjectMapEntry id="syncTimeText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/syncTimeText']" />
+        <ObjectMapEntry id="unlockSiteImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/unlockSiteImg']" />
+        <ObjectMapEntry id="uploadGxmContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/uploadGxmContainer']" />
+        <ObjectMapEntry id="uploadGxmLeftImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/uploadGxmLeftImg']" />
+        <ObjectMapEntry id="uploadGxmRightImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/uploadGxmRightImg']" />
+        <ObjectMapEntry id="uploadGxmText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/uploadGxmText']" />
+        <ObjectMapEntry id="versionAndReleaseDateContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/versionAndReleaseDateContainer']" />
+        <ObjectMapEntry id="versionContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/versionContainer']" />
+        <ObjectMapEntry id="versionImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/versionImg']" />
+        <ObjectMapEntry id="versionText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/versionText']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="handHeldIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/handHeldIcon']" />
+      <ObjectMapEntry id="instrumentIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/instrumentIcon']" />
+      <ObjectMapEntry id="instruments" locator="">
+        <ObjectMapEntry id="addInstrumentButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/addInstrumentButton']" />
+        <ObjectMapEntry id="completeIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/completeIcon']" />
+        <ObjectMapEntry id="Connect Omni" locator="//MobileObject[@caption='Connect Omni']" />
+        <ObjectMapEntry id="connectPromptContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/connectPromptContainer']" />
+        <ObjectMapEntry id="disconnectProcessorIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/disconnectProcessorIcon']" />
+        <ObjectMapEntry id="entryBackButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/entryBackButton']" />
+        <ObjectMapEntry id="entryTitleText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/entryTitleText']" />
+        <ObjectMapEntry id="errorsText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/errorsText']" />
+        <ObjectMapEntry id="identifyProcessorIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/identifyProcessorIcon']" />
+        <ObjectMapEntry id="instrumentStatusContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/instrumentStatusContainer']" />
+        <ObjectMapEntry id="instrumentStatusText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/instrumentStatusText']" />
+        <ObjectMapEntry id="maintenanceEntryContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/maintenanceEntryContainer']" />
+        <ObjectMapEntry id="maintenanceIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/maintenanceIcon']" />
+        <ObjectMapEntry id="modelNumberImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/modelNumberImg']" />
+        <ObjectMapEntry id="modelNumberText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/modelNumberText']" />
+        <ObjectMapEntry id="monthlyMaintenanceIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/monthlyMaintenanceIcon']" />
+        <ObjectMapEntry id="monthlyMaintenanceText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/monthlyMaintenanceText']" />
+        <ObjectMapEntry id="nickNameEdit" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/nickNameEdit']" />
+        <ObjectMapEntry id="nickNameImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/nickNameImg']" />
+        <ObjectMapEntry id="notSyncedContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/notSyncedContainer']" />
+        <ObjectMapEntry id="notSyncedImg" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/notSyncedImg']" />
+        <ObjectMapEntry id="notSyncedText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/notSyncedText']" />
+        <ObjectMapEntry id="processorAvailabilitySwitchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorAvailabilitySwitchIcon']" />
+        <ObjectMapEntry id="processorBatteryIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorBatteryIcon']" />
+        <ObjectMapEntry id="processorMaintenanceIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorMaintenanceIcon']" />
+        <ObjectMapEntry id="processorOffSwitchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorOffSwitchIcon']" />
+        <ObjectMapEntry id="processorOpenCloseDoorIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorOpenCloseDoorIcon']" />
+        <ObjectMapEntry id="processorRestartSwitchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorRestartSwitchIcon']" />
+        <ObjectMapEntry id="processorSelfTestIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorSelfTestIcon']" />
+        <ObjectMapEntry id="processorText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorText']" />
+        <ObjectMapEntry id="scanDoorTagImageView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/scanDoorTagImageView']" />
+        <ObjectMapEntry id="scrollView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/scrollView']" />
+        <ObjectMapEntry id="selfTest" locator="">
+          <ObjectMapEntry id="selfTestEntryContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/selfTestEntryContainer']" />
+          <ObjectMapEntry id="selfTestIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/selfTestIcon']" />
+          <ObjectMapEntry id="selfTestRunTitleText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/selfTestRunTitleText']" />
+          <ObjectMapEntry id="selfTestStartText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/selfTestStartText']" />
+          <ObjectMapEntry id="selfTestStatusTitleText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/selfTestStatusTitleText']" />
+          <ObjectMapEntry id="startSelfTestIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/startSelfTestIcon']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="serialNumberText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/serialNumberText']" />
+        <ObjectMapEntry id="taskBackButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/taskBackButton']" />
+        <ObjectMapEntry id="taskIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/taskIcon']" />
+        <ObjectMapEntry id="taskInstructionsText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/taskInstructionsText']" />
+        <ObjectMapEntry id="taskTitleText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/taskTitleText']" />
+        <ObjectMapEntry id="testsRunText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/testsRunText']" />
+        <ObjectMapEntry id="weeklyMaintenanceIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/weeklyMaintenanceIcon']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="pendingCommands" locator="">
+        <ObjectMapEntry id="Install Xpert HIV-1 Qual v2" locator="//MobileObject[@caption='Install Xpert HIV-1 Qual v2']" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="pendingCommandsIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/pendingCommandsIcon']" />
+      <ObjectMapEntry id="printerIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/printerIcon']" />
+      <ObjectMapEntry id="printers" locator="">
+        <ObjectMapEntry id="" locator="" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="processorIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorIcon']" />
+      <ObjectMapEntry id="toolsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toolsButton']" />
+      <ObjectMapEntry id="users" locator="">
+        <ObjectMapEntry id="userDetails" locator="">
+          <ObjectMapEntry id="fnTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/fnTextView']" />
+          <ObjectMapEntry id="lnTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/lnTextView']" />
+          <ObjectMapEntry id="userDetailBackImageView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userDetailBackImageView']" />
+          <ObjectMapEntry id="userNameTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userNameTextView']" />
+          <ObjectMapEntry id="userTypeTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userTypeTextView']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="userFNameHeader" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userFNameHeader']" />
+        <ObjectMapEntry id="userGivenNameHeader" locator="//MobileObject[@className='android.widget.ImageView'][2]" />
+        <ObjectMapEntry id="userNameHeader" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/userNameHeader']" />
+        <ObjectMapEntry id="userTypeHeader" locator="//MobileObject[@className='android.widget.ImageView'][6]" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="usersIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/usersIcon']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="userProvisioning" locator="">
+      <ObjectMapEntry id="beginSetupIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/beginSetupIcon']" />
+      <ObjectMapEntry id="Brendan-EMG" locator="//MobileObject[@caption='Brendan-EMG']" />
+      <ObjectMapEntry id="goToHomeIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/goToHomeIcon']" />
+      <ObjectMapEntry id="passwordEntry" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/passwordEntry']" />
+      <ObjectMapEntry id="passwordProceed" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/passwordProceed']" />
+      <ObjectMapEntry id="requestOneTimeCodeIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/requestOneTimeCodeIcon']" />
+      <ObjectMapEntry id="secondFactorEntry" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/secondFactorEntry']" />
+      <ObjectMapEntry id="secondFactorProceed" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/secondFactorProceed']" />
+      <ObjectMapEntry id="toSyncSettingsButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toSyncSettingsButton']" />
+      <ObjectMapEntry id="userNameEntry" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/userNameEntry']" />
+    </ObjectMapEntry>
+    <ObjectMapEntry id="viewResults" locator="">
+      <ObjectMapEntry id="12" locator="//MobileTextField[@caption='12']" />
+      <ObjectMapEntry id="2017" locator="//MobileTextField[@caption='2017']" />
+      <ObjectMapEntry id="ageSearchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/ageSearchIcon']" />
+      <ObjectMapEntry id="ageSearchText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/ageSearchText']" />
+      <ObjectMapEntry id="assayCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/assayCol']" />
+      <ObjectMapEntry id="birthdateCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/birthdateCol']" />
+      <ObjectMapEntry id="dateRangePickerBody" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/dateRangePickerBody']" />
+      <ObjectMapEntry id="Dec" locator="//MobileTextField[@caption='Dec']" />
+      <ObjectMapEntry id="familyNameCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/familyNameCol']" />
+      <ObjectMapEntry id="familyNameSearchText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/familyNameSearchText']" />
+      <ObjectMapEntry id="fromLabel" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/fromLabel']" />
+      <ObjectMapEntry id="givenNameCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/givenNameCol']" />
+      <ObjectMapEntry id="givenNameSearchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/givenNameSearchIcon']" />
+      <ObjectMapEntry id="givenNameSearchText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/givenNameSearchText']" />
+      <ObjectMapEntry id="numberpicker_input" locator="//MobileTextField[@resource-id='android:id/numberpicker_input']" />
+      <ObjectMapEntry id="othersTest" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/othersTest']" />
+      <ObjectMapEntry id="patientIdCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/patientIdCol']" />
+      <ObjectMapEntry id="patientIdSearchText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/patientIdSearchText']" />
+      <ObjectMapEntry id="result" locator="">
+        <ObjectMapEntry id="endTimeTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/endTimeTextView']" />
+        <ObjectMapEntry id="errorIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/errorIcon']" />
+        <ObjectMapEntry id="errors" locator="">
+          <ObjectMapEntry id="errorNumberText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/errorNumberText']" />
+          <ObjectMapEntry id="omniText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/omniText']" />
+          <ObjectMapEntry id="solutionText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/solutionText']" />
+          <ObjectMapEntry id="titleText1" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText']" />
+        </ObjectMapEntry>
+        <ObjectMapEntry id="printButton" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/printButton']" />
+        <ObjectMapEntry id="processorNameTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/processorNameTextView']" />
+        <ObjectMapEntry id="resultsText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/resultsText']" />
+        <ObjectMapEntry id="testAssayNameTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/testAssayNameTextView']" />
+        <ObjectMapEntry id="testSampleIdTextView" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/testSampleIdTextView']" />
+        <ObjectMapEntry id="titleText0" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText']" />
+        <ObjectMapEntry id="titleText1" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText'][2]" />
+        <ObjectMapEntry id="titleText2" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText'][3]" />
+        <ObjectMapEntry id="titleText3" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText'][4]" />
+        <ObjectMapEntry id="titleText4" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/titleText'][5]" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="sampleIdCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/sampleIdCol']" />
+      <ObjectMapEntry id="sampleIdSearchIcon" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/sampleIdSearchIcon']" />
+      <ObjectMapEntry id="sampleIdSearchText" locator="//MobileTextField[@resource-id='com.cepheid.epsilon:id/sampleIdSearchText']" />
+      <ObjectMapEntry id="scrollView" locator="//MobileObject[@resource-id='android:id/scrollView']" />
+      <ObjectMapEntry id="startTimeCol" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/startTimeCol']" />
+      <ObjectMapEntry id="thisMonthsTest" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/thisMonthsTest']" />
+      <ObjectMapEntry id="thisWeeksTest" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/thisWeeksTest']" />
+      <ObjectMapEntry id="todaysTest" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/todaysTest']" />
+      <ObjectMapEntry id="toLabel" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/toLabel']" />
+      <ObjectMapEntry id="txtAssay" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtAssay']" />
+      <ObjectMapEntry id="txtDateOfBirth" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtDateOfBirth']" />
+      <ObjectMapEntry id="txtFamilyName" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtFamilyName']" />
+      <ObjectMapEntry id="txtGivenName" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtGivenName']" />
+      <ObjectMapEntry id="txtPatientId" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtPatientId']" />
+      <ObjectMapEntry id="txtSampleId" locator="">
+        <ObjectMapEntry id="txtSampleId1" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId']" />
+        <ObjectMapEntry id="txtSampleId2" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][2]" />
+        <ObjectMapEntry id="txtSampleId3" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][3]" />
+        <ObjectMapEntry id="txtSampleId4" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][4]" />
+        <ObjectMapEntry id="txtSampleId5" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][5]" />
+        <ObjectMapEntry id="txtSampleId6" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][6]" />
+        <ObjectMapEntry id="txtSampleId7" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][7]" />
+        <ObjectMapEntry id="txtSampleId8" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtSampleId'][8]" />
+      </ObjectMapEntry>
+      <ObjectMapEntry id="txtStartTime" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/txtStartTime']" />
+      <ObjectMapEntry id="viewResultsContainer" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/viewResultsContainer']" />
+      <ObjectMapEntry id="viewResultsText" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/viewResultsText']" />
+      <ObjectMapEntry id="yesterdaysTest" locator="//MobileObject[@resource-id='com.cepheid.epsilon:id/yesterdaysTest']" />
+    </ObjectMapEntry>
+  </ObjectMapEntry>
+</ObjectMap>

@@ -1,0 +1,54 @@
+package testcontrol.D27351;
+
+import helper.Errors;
+import instrument.Putty;
+import mobile.StartTest;
+import mobile.MobileTestErrors;
+import postman.PostmanGetError;
+import postman.PostmanGetTest;
+import postman.PostmanSendError;
+import sheet.LineCount;
+import sheet.SheetTestErrors;
+
+import static org.junit.Assert.assertFalse;
+
+import java.io.IOException;
+
+/**
+ * Handles all test cases for the Instrument Errors tab
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class InstrumentErrors {
+	
+	public static void ie1_ie7Run() {
+		// ErrorCode, ErrorMessage, ErrorDetails
+		String sheet = "./sheets/instrument error/instrument errors/ie1_ie7.csv";
+		try {
+			for (int line = 0; line < LineCount.lineCount(sheet); line++) { // loops # of rows (excluding header)
+				StartTest.startTest();
+				System.out.println("Debug: startTests()");
+				// wait until test starts
+				PostmanSendError.sendError(SheetTestErrors.getErrorCode(sheet, line));
+				System.out.println("Debug: sendError()");
+				// wait until error appears
+				Errors.compareErrorMessages(MobileTestErrors.getErrorMessage(), SheetTestErrors.getErrorMessage(sheet, line));
+				System.out.println("Debug: compareErrorMessages()");
+				// wait until test completion
+				Errors.compareErrorDetails(MobileTestErrors.getErrorDetails(), SheetTestErrors.getErrorDetails(sheet, line));
+				System.out.println("Debug: compareErrorDetails()");
+				PostmanGetTest.getTests();
+				Errors.compareMobilePostman(MobileTestErrors.getErrorMessage(), PostmanGetError.getErrorMessage());
+				PostmanSendError.sendError("0");
+				Putty.restart();
+				// wait until omni full restarts
+				StartTest.startTest();
+				// wait until test completion
+				assertFalse(MobileTestErrors.errorsExist());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

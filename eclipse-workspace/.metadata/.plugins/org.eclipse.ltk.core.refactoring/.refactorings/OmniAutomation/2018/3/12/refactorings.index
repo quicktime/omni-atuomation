@@ -1,0 +1,24 @@
+1521484171949	Delete element
+1521492537175	Rename local variable 'string'
+1521492851400	Rename type 'DoorClose'
+1521569650677	Rename local variable 'string'
+1521569655293	Rename local variable 'string'
+1521569662710	Rename local variable 'string'
+1521580274054	Rename method 'toTestsButton'
+1521580282930	Rename method 'toCurrentUserButton'
+1521580286506	Rename method 'toToolsButton'
+1521580290664	Rename method 'toHandheldIcon'
+1521580294574	Rename method 'toPendingCommandsIcon'
+1521580674734	Delete element
+1521583036397	Rename type 'AdminActions'
+1521583129371	Rename type 'HandHeldActions'
+1521583137222	Rename type 'PendingCommandsActions'
+1521583144312	Rename type 'ProcessorActions'
+1521585289259	Move compilation unit
+1521585811298	Encapsulate field 'timer'
+1521591579733	Rename method 'toHandheld'
+1521753143527	Rename compilation unit 'SetCartNFC.java'
+1521753304080	Rename type 'NFC'
+1521838169294	Rename resource '0% Uploading.objectmap'
+1521838252688	Delete element
+1521843692502	Rename local variable 'assay'

@@ -1,0 +1,23 @@
+1520277214320	Rename method 'getTests'
+1520278683679	Rename type 'PostmanGetTest'
+1520278834161	Delete element
+1520278839619	Delete element
+1520278941444	Rename type 'PostmanSendError'
+1520284742824	Delete element
+1520286690679	Encapsulate field 'timer'
+1520287421200	Rename method 'getErrorCode'
+1520304864384	Delete element
+1520384037260	Rename local variable 'mobileErrorNumber'
+1520456513239	Delete element
+1520456520832	Delete element
+1520459663534	Delete element
+1520459665923	Delete element
+1520459669428	Delete element
+1520459671452	Delete element
+1520537221837	Rename method 'postmanErrors'
+1520537264985	Rename method 'postmanErrorType'
+1520537320789	Rename method 'postmanErrorCode'
+1520537366579	Rename method 'postmanFullErrorCode'
+1520537469208	Rename method 'getErrorCode'
+1520538624799	Rename type 'InstrumentErrors'
+1520631145998	Delete element

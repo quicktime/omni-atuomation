@@ -1,0 +1,16 @@
+OmniAutomation_dontShowConfigurationsDialogAgain=false
+OmniAutomation_lastSelectedBrowserSize=Default
+OmniAutomation_lastSelectedConfiguration=deviceName\=SM-J510FN;platformName\=Android;host\=localhost;deviceId\=5a29ee05 - Android
+OmniAutomation_lastSelectedOrientation=
+dontShowSubclipseVersionWarningAgain=always
+eclipse.preferences.version=1
+recording.OmniAutomation.class=Download
+recording.OmniAutomation.package=winscp
+recording.license.class=Main
+recording.license.package=license
+recording.tt.class=Provisioning
+recording.tt.package=mobile
+tt_dontShowConfigurationsDialogAgain=false
+tt_lastSelectedBrowserSize=Default
+tt_lastSelectedConfiguration=deviceName\=SM-J510FN;platformName\=Android;host\=localhost;deviceId\=5a29ee05 - Android
+tt_lastSelectedOrientation=

@@ -1,0 +1,12 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Document - WordPad" locator="/Window[@caption=&apos;Document - WordPad&apos;]">
+    <ObjectMapEntry id="Open" locator="//Dialog[@caption=&apos;Open&apos;]">
+      <ObjectMapEntry id="File name" locator="//TextField[@caption=&apos;File name:&apos;]"/>
+      <ObjectMapEntry id="Open" locator="//PushButton[@caption=&apos;Open&apos;]"/>
+      <ObjectMapEntry id="Open Dialog" locator="//Dialog[@caption=&apos;Open&apos;]">
+        <ObjectMapEntry id="OK" locator="//PushButton[@caption=&apos;OK&apos;]"/>
+      </ObjectMapEntry>
+    </ObjectMapEntry>
+    <ObjectMapEntry id="Rich Text Window" locator="//Control[@caption=&apos;Rich Text Window&apos;]"/>
+  </ObjectMapEntry>
+</ObjectMap>

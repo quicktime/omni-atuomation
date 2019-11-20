@@ -1,0 +1,42 @@
+package testcontrol.D27351;
+
+import helper.ComparePostmanMobile;
+import helper.Errors;
+import instrument.Putty;
+import mobile.StartTest;
+import mobile.MobileTestErrors;
+import postman.PostmanGetTest;
+import postman.PostmanSendError;
+import sheet.SheetTestErrors;
+
+import static org.junit.Assert.assertFalse;
+
+/**
+ * Handles all test cases for the Instrument Errors tab
+ * @author Brendan Dolan
+ * @date Created on: Feb 21, 2018
+ */
+public class InstrumentErrors {
+	
+	public static void ie1_ie7Run() {
+		// ErrorCode, ErrorMessage, ErrorDetails
+		String sheet = "./sheets/instrument error/instrument errors/ie1_ie7.csv";
+		// TODO: Create loop to run through all the test cases
+		
+			StartTest.startTest();
+			// wait until test starts
+			PostmanSendError.sendError(SheetTestErrors.getErrorCode(sheet));
+			// wait until error appears
+			Errors.compareErrors(MobileTestErrors.getErrorMessage(), SheetTestErrors.getErrorMessage(sheet));
+			// wait until test completion
+			Errors.compareErrorDetails(MobileTestErrors.getErrorDetails(), SheetTestErrors.getErrorDetails(sheet));
+			PostmanGetTest.getTests();
+			ComparePostmanMobile.compare();
+			PostmanSendError.sendError("0");
+			Putty.restart();
+			// wait until omni full restarts
+			StartTest.startTest();
+			// wait until test completion
+			assertFalse(MobileTestErrors.errorsExist());
+	}
+}

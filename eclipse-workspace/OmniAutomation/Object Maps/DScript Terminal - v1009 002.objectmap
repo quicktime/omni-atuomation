@@ -1,0 +1,6 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="DScript Terminal - v1009 002" locator="/Window[@caption=&apos;DScript Terminal - v1009.002  &apos;]">
+    <ObjectMapEntry id="Enter" locator="//PushButton[@caption=&apos;Enter&apos;]"/>
+    <ObjectMapEntry id="TextField" locator="//TextField"/>
+  </ObjectMapEntry>
+</ObjectMap>

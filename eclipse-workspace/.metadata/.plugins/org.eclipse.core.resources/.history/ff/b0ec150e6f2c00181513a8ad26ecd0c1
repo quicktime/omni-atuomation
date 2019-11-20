@@ -1,0 +1,12 @@
+package mobile;
+
+public class Navigation extends BaseState {
+
+	
+	public static void handheldIcon() {
+		waitForObject("Device.toolsButton");
+		mobileObject("Device.toolsButton").click();
+		mobileObject("Device.tools.pendingCommandsIcon").click();
+		mobileObject("Device.tools.handHeldIcon").click();
+	}
+}

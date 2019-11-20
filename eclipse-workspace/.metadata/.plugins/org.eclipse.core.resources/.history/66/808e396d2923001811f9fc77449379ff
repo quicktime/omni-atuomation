@@ -1,0 +1,112 @@
+package mobile;
+
+import com.borland.silktest.jtf.Utils;
+import com.microfocus.silktest.jtf.mobile.MobileButton;
+import com.microfocus.silktest.jtf.mobile.MobileObject;
+import com.microfocus.silktest.jtf.mobile.MobileTextField;
+
+import testcontrol.Main;
+import com.borland.silktest.jtf.Desktop;
+import com.microfocus.silktest.jtf.mobile.MobileDevice;
+import com.borland.silktest.jtf.common.types.Point;
+
+/**
+ * Handles all Omni Mobile provisioning steps
+ * @author Brendan Dolan
+ * @date Created on: Feb 23, 2018
+ */
+public class Provisioning extends BaseState {
+
+	/**
+	 * Handles site provisioning. Currently, hardcoded fields.
+	 * TODO replace all hardcoded fields.
+	 */
+	public static void siteProvisioning() {
+		if (getDesktop().exists("Device.siteProvisioning.proceedInfoArrowIcon")) {
+			mobileObject("Device.siteProvisioning.proceedInfoArrowIcon").click();
+			mobileTextField("Device.siteProvisioning.secretEditText").setText("F3CBDQREHTY2323X"); // TODO: Replace hard-coded SITE secret code
+			mobileTextField("Device.siteProvisioning.serverEditText").setText("https://c360admin-stg9.cepheid.com:9082");
+			getDesktop().<MobileDevice>find("Device").swipe(new Point(130, 1), new Point(130, 700));
+			getDesktop().<MobileObject>find("Device.icon").click();
+			getDesktop().<MobileDevice>find("Device").swipe(new Point(362, 1062), new Point(330, 386));
+			Utils.sleep(6000);
+			mobileObject("Device.siteProvisioning.verifyOneTimePasswordIcon").click();
+			Utils.sleep(1000);
+			mobileObject("Device.siteProvisioning.completeProvisioningForwardIcon").click();
+			mobileButton("Device.global.button1").click();
+			getDesktop().waitForObject("Device.userProvisioning.beginSetupIcon", 60000);
+			Main.debug.LOG("Test completed siteProvisioning.");
+		} else {
+			Main.debug.LOG("Test did not siteProvision.");
+		}
+
+		//start recording 
+
+		//end recording
+	}
+	
+	/**
+	 * Handles user provisioning. Currently, hardcoded fields, to login as c360.brendan. Will always fail the first time,
+	 * because of OTP. TODO replace all hardcoded fields.
+	 */
+	public static void userProvisioning() {
+		if (getDesktop().exists("Device.userProvisioning.beginSetupIcon")) {
+			getDesktop().<MobileObject>find("Device.userProvisioning.beginSetupIcon").click();
+		}
+		if (getDesktop().exists("Device.userProvisioning.requestOneTimeCodeIcon")) {
+			getDesktop().<MobileTextField>find("Device.userProvisioning.userNameEntry").setText("c360.brendan@gmail.com"); // TODO: Replace hard-coded & raw-text username
+			getDesktop().<MobileObject>find("Device.userProvisioning.requestOneTimeCodeIcon").click();
+			getDesktop().<MobileTextField>find("Device.userProvisioning.passwordEntry").setText("Cphd123@"); // TODO: Replace hard-coded & raw-text password
+			getDesktop().<MobileTextField>find("Device.userProvisioning.secondFactorEntry").setText("441600"); // TODO: Figure out how to not hardcode this with c360 team
+			getDesktop().<MobileObject>find("Device.userProvisioning.secondFactorProceed").click();
+			getDesktop().<MobileObject>find("Device.userProvisioning.text1").click();
+			getDesktop().<MobileObject>find("Device.userProvisioning.Brendan-EMG").click();
+			getDesktop().<MobileObject>find("Device.userProvisioning.toSyncSettingsButton").click();
+			getDesktop().waitForObject("Device.userProvisioning.goToHomeIcon", 1000000);
+			getDesktop().<MobileObject>find("Device.userProvisioning.goToHomeIcon").click();
+			Main.debug.LOG("Test completed userProvisioning.");
+			networkProvisioning();
+		} else {
+			Main.debug.LOG("Test did not userProvision.");
+		}
+	}
+	
+	/**
+	 * Handles logins. Currently, hardcoded fields, to login as c360.brendan
+	 * TODO replace all hardcoded fields.
+	 */
+	public static void login() {
+		if (getDesktop().exists("Device.userProvisioning.userNameEntry")) {
+			getDesktop().<MobileTextField>find("Device.userProvisioning.userNameEntry").setText("c360.brendan@gmail.com");
+			getDesktop().<MobileTextField>find("Device.userProvisioning.passwordEntry").setText("Cphd123@");
+			getDesktop().<MobileObject>find("Device.userProvisioning.passwordProceed").click();
+			Main.debug.LOG("Test logged in.\n");
+		} else {
+			Main.debug.LOG("Test did not login.\n");
+		}
+	}
+	
+	/**
+	 * Handles network setup. Currently harcoded fields, to setup hotspot
+	 * TODO replace all hardcoded fields
+	 */
+	public static void networkProvisioning() {
+		Main.debug.LOG("Waiting 1 minute to download assays");
+		Utils.sleep(60000);
+		getDesktop().waitForObject("Device.toolsButton");
+		mobileObject("Device.toolsButton").click();
+		mobileObject("Device.tools.pendingCommandsIcon").click();
+		mobileObject("Device.tools.handHeldIcon").click();
+		mobileObject("Device.tools.handHeld.enableHotspotButton").click();
+		mobileButton("Device.global.button1").click();
+		Utils.sleep(5000);
+		mobileObject("Device.linearLayouts.5").click();
+		mobileTextField("Device.ssidPassphraseEditText").setText("12345678");
+		mobileButton("Device.global.button1").click();
+		mobileObject("Device.tools.pendingCommandsIcon").click();
+		Utils.sleep(60000);
+		Main.debug.LOG("Waiting 1 minute for instruments to connect");
+//		mobileObject("Device.Install Xpert HIV-1 Qual v2").click();
+		Main.debug.LOG("Test completed networkProvisioning.");
+	}
+}

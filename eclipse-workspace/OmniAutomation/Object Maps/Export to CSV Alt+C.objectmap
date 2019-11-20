@@ -1,0 +1,3 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Export to CSV Alt+C" locator="/Control[@caption=&apos;DB Browser for SQLite&apos;]//AccessibleControl[@caption=&apos;Export to CSV Alt+C&apos;]"/>
+</ObjectMap>

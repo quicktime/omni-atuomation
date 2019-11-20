@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="T:\swq\private\Brendan\eclipse-workspace.zip"/>
+		<item value="T:\swq\private\Brendan\eclipse-workspace\EDE-1"/>
+		<item value="T:\swq\private\Brendan\eclipse-workspace\EDE-1\src"/>
+		<item value="T:\swq\private\Brendan\eclipse-workspace\OmniAutomation"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="401" key="DIALOG_HEIGHT"/>
+		<item value="590" key="DIALOG_X_ORIGIN"/>
+		<item value="238" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="T:\swq\private\Brendan\eclipse-workspace"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="110" key="DIALOG_X_ORIGIN"/>
+		<item value="318" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

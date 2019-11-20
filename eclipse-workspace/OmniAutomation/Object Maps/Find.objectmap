@@ -1,0 +1,12 @@
+<ObjectMap version="1">
+  <ObjectMapEntry id="Find" locator="/Window[@caption=&apos;Find&apos;]">
+    <ObjectMapEntry id="&amp;Help" locator="//Control[@caption=&apos;&amp;Help&apos;]"/>
+    <ObjectMapEntry id="&amp;Start" locator="//Control[@caption=&apos;&amp;Start&apos;]"/>
+    <ObjectMapEntry id="Close" locator="//Control[@caption=&apos;Close&apos;]"/>
+    <ObjectMapEntry id="Focus" locator="//PushButton[@caption=&apos;Focus&apos;]"/>
+    <ObjectMapEntry id="nohup-run-epsilon-java sh" locator="//AccessibleControl[@caption=&apos;nohup-run-epsilon-java.sh&apos;]"/>
+    <ObjectMapEntry id="Start" locator="//PushButton[@caption=&apos;Start&apos;]"/>
+    <ObjectMapEntry id="TextField" locator="//TextField"/>
+    <ObjectMapEntry id="TIEListView" locator="//Control[@windowClassName=&apos;TIEListView&apos;]"/>
+  </ObjectMapEntry>
+</ObjectMap>

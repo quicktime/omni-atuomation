@@ -1,0 +1,120 @@
+package mobile;
+
+import com.borland.silktest.jtf.Utils;
+
+/**
+ * Handles all Admin Actions functions
+ * @author Brendan Dolan
+ * @date Created on: Mar 12, 2018
+ */
+public class AdminActions extends BaseState {
+
+	/**
+	 * performs a self-test
+	 */
+	public static void selfTest() {
+		// TODO
+	}
+	
+	/**
+	 * Performs weekly maintenance functions
+	 */
+	public static void weeklyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs monthly maintenance functions
+	 */
+	public static void monthlyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs the Staus LED functions
+	 */
+	public static void LED() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to remove instrument
+	 */
+	public static void removeInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to shutdown instrument
+	 */
+	public static void shutdownInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to restart instrument
+	 */
+	public static void restartInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Perfoms actions to reset the site
+	 */
+	public static void resetSite() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to update the network
+	 */
+	public static void updateNetwork(String ssid, String password) {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to turn on mobile hotspot
+	 */
+	public static void mobileHotspot(String ssid, String password) {
+		getDesktop().waitForObject("Device.toolsButton");
+		mobileObject("Device.toolsButton").click();
+		mobileObject("Device.tools.pendingCommandsIcon").click();
+		mobileObject("Device.tools.handHeldIcon").click();
+		mobileObject("Device.tools.handHeld.enableHotspotButton").click();
+		mobileButton("Device.global.button1").click();
+		Utils.sleep(5000);
+		mobileObject("Device.linearLayouts.5").click();
+		mobileTextField("Device.ssidPassphraseEditText").setText("12345678");
+		mobileButton("Device.global.button1").click();
+		mobileObject("Device.tools.pendingCommandsIcon").click();
+	}
+	
+	/**
+	 * Performs actions to sync
+	 */
+	public static void sync() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to change lockout time
+	 * @param time - time to set lockout
+	 */
+	public static void lockout(int time) {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to download test results from instrument
+	 */
+	public static void downloadResults() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to upoad test results to c360
+	 */
+	public static void uploadResults() {
+		// TODO
+	}
+}

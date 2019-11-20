@@ -1,0 +1,165 @@
+package helper;
+
+import mobile.MobileTestErrors;
+import testcontrol.Main;
+
+import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+
+/**
+ * Class handles all string manipulations. Please put all string methods in this class.
+ * Does not include declaration nor initialization.
+ * @author Brendan Dolan
+ * @date Created on: Mar 2, 2018
+ */
+public class StringManipulation {
+
+	/**
+	 * Formats the errorCode to match data sheets.
+	 * Substring(7) cuts off "Code : "
+	 * @param input
+	 * @return
+	 */
+	public static String errorCode(String input) {
+		String output = input.substring(7);
+		return output;
+	}
+	
+	/**
+	 * Formats the errorMessage to match data sheets.
+	 * @param input
+	 * @return
+	 */
+	public static String errorMessage(String input) {
+		String output = input.concat(";");
+		return output;
+	}
+	
+	/**
+	 * Formats the solution text to match data sheets. 
+	 * Removes newlines and bullets.
+	 * @param input
+	 * @return
+	 */
+	public static String solutionText(String input) {
+		String noLeadingSpace = input.replaceFirst(" ", "");
+		String noBullets = noLeadingSpace.replaceAll(" \\n*•|\\n*•", "");
+		String output = noBullets.concat(";");
+		return output;
+	}
+	
+	/**
+	 * Formats the omni text, nickname and serial number to match data sheets.
+	 * @param input
+	 * @return
+	 */
+	public static String omniText(String input) {
+		String output = input.concat(";");
+		return output;
+	}
+	
+	/**
+	 * Gets rid of any semi-colon at the start of the string.
+	 * @param input
+	 * @return
+	 */
+	public static String noLeadingSemi(String input) {
+		String output = input.replaceFirst("^;", "");
+		return output;
+	}
+	
+	/**
+	 * Used to ignore {} characters from the data sheet. Allows for specific variables from Omni to not 
+	 * affect data sheet verification.
+	 * @param input
+	 * @return
+	 */
+	public static String ignore(String input) {
+		String escapedLeftParen = input.replaceAll("\\(", "\\\\(");
+		String escapedRightParen = escapedLeftParen.replaceAll("\\)", "\\\\)");
+		String output = escapedRightParen.replace("{}", "(.*)");
+		return output;
+	}
+		
+	/**
+	 * Gets and formats the entire errors line to match data sheets.
+	 * @return
+	 */
+	public static String errors() {
+		String errorCode = MobileTestErrors.getErrorNumber();
+		String titleText1 = errorMessage(MobileTestErrors.getErrorMessage());
+		String solutionText = solutionText(MobileTestErrors.getSolutionText());
+		String omniText = omniText(MobileTestErrors.getOmniText());
+		String errorNumberText = MobileTestErrors.getErrorNumberText();
+		String errors = errorCode.concat(";").concat(titleText1.concat(solutionText.concat(omniText.concat(errorNumberText))));
+		return errors;
+	}
+	
+	/**
+	 * Formats provided sample ID's errors from {@link postman.PostmanGet#getTestErrors}
+	 * @param sampleExternalID sampleID provided by caller of {@link postman.PostmanGet#getTestErrors}
+	 * @param sResponse reponse from postman get
+	 * @return postman errors as string
+	 */
+	public static String postmanErrors(String sampleExternalID, String sResponse) {
+		String test = sResponse.substring(sResponse.indexOf("\"sampleExternalId\" : \"" + sampleExternalID + "\","));
+		String errors = test.substring(test.indexOf("\"errors\" : ["));
+		String errorLimit = errors.substring(0, errors.indexOf("]") + 1);
+		return errorLimit;
+	}
+	
+	/**
+	 * Formats postman error type param from error data
+	 * @param sampleExternalID sampleID provided by caller of {@link herlper.StringManipulation#postmanFullErrorCode}
+	 * @param sResponse response from postman get
+	 * @return error type as string
+	 */
+	public static String postmanErrorType(String sampleExternalID, String sResponse) {
+		String errorType = null;
+		String errors = postmanErrors(sampleExternalID, sResponse);
+		
+		String errorTypeMessage = errors.substring(errors.indexOf("\"errorType\" : "), errors.indexOf("\"errorType\" : ") + 16);
+		String sErrorType = errorTypeMessage.substring(14, errorTypeMessage.indexOf(","));
+		errorType = sErrorType;
+		return errorType;
+	}
+	
+	/**
+	 * Formats postman error code param from error data
+	 * @param sampleExternalID sampleID provided by caller of {@link herlper.StringManipulation#postmanFullErrorCode}
+	 * @param sResponse response from postman get
+	 * @return error code as string
+	 */
+	public static String postmanErrorCode(String sampleExternalID, String sResponse) {
+		String errorCode = null;
+		String errors = postmanErrors(sampleExternalID, sResponse);
+		
+		String errorCodeMessage = errors.substring(errors.indexOf("\"errorCode\" : "), errors.indexOf("\"errorCode\" : ") + 16);
+		String sErrorCode = errorCodeMessage.substring(14, errorCodeMessage.indexOf(","));
+		int iErrorCode = Integer.parseInt(sErrorCode);
+		if (iErrorCode < 10) {
+			errorCode = "0".concat(sErrorCode); // makes string 0X instead of X 
+		} else {
+			errorCode = sErrorCode;
+		}
+		return errorCode;
+	}
+
+	/**
+	 * Formats full error code from error data to match mobile device error code
+	 * @param sampleExternalID sampleID provided by caller
+	 * @param sResponse response from postman get
+	 * @return full error code as string
+	 */
+	public static String postmanFullErrorCode(String sampleExternalID, String sResponse) {
+		String fullErrorCode = null;
+		String errorType = postmanErrorType(sampleExternalID, sResponse);
+		String errorCode = postmanErrorCode(sampleExternalID, sResponse);
+		
+		fullErrorCode = errorType.concat("0").concat(errorCode);
+		return fullErrorCode;
+	}
+}

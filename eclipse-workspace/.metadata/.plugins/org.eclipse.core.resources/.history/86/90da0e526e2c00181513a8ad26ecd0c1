@@ -1,0 +1,101 @@
+package mobile;
+
+/**
+ * Handles all Admin Actions functions
+ * @author Brendan Dolan
+ * @date Created on: Mar 12, 2018
+ */
+public class AdminActions {
+
+	/**
+	 * performs a self-test
+	 */
+	public static void selfTest() {
+		// TODO
+	}
+	
+	/**
+	 * Performs weekly maintenance functions
+	 */
+	public static void weeklyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs monthly maintenance functions
+	 */
+	public static void monthlyMaintenance() {
+		// TODO
+	}
+	
+	/**
+	 * Performs the Staus LED functions
+	 */
+	public static void LED() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to remove instrument
+	 */
+	public static void removeInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to shutdown instrument
+	 */
+	public static void shutdownInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to restart instrument
+	 */
+	public static void restartInstrument() {
+		// TODO
+	}
+	
+	/**
+	 * Perfoms site reset actions
+	 */
+	public static void resetSite() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to turn on mobile hotspot
+	 */
+	public static void mobileHotspot() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to sync
+	 */
+	public static void sync() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to change lockout time
+	 * @param time - time to set lockout
+	 */
+	public static void lockout(int time) {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to download test results from instrument
+	 */
+	public static void downloadResults() {
+		// TODO
+	}
+	
+	/**
+	 * Performs actions to upoad test results to c360
+	 */
+	public static void uploadResults() {
+		// TODO
+	}
+}

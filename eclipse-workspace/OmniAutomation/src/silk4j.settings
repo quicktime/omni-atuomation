@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recorderProject version="18.5">
+  <applicationConfiguration>
+    <moduleNamePattern>*\DB Browser for SQLite.exe</moduleNamePattern>
+    <baseStateInfo>
+      <executable>\\swattestexcc\Omni_Validation_Scripts\Omni_Automation_Master\programs\DB Browser for SQLite\DB Browser for SQLite.exe</executable>
+      <workingDirectory>\\swattestexcc\Omni_Validation_Scripts\Omni_Automation_Master\programs\DB Browser for SQLite</workingDirectory>
+      <locator>DB Browser for SQLite</locator>
+    </baseStateInfo>
+  </applicationConfiguration>
+  <applicationConfiguration>
+    <moduleNamePattern>*\wordpad.exe</moduleNamePattern>
+  </applicationConfiguration>
+  <applicationConfiguration>
+    <moduleNamePattern>*\WinSCP.exe</moduleNamePattern>
+  </applicationConfiguration>
+  <applicationConfiguration>
+    <moduleNamePattern>*\putty.exe</moduleNamePattern>
+  </applicationConfiguration>
+  <applicationConfiguration>
+    <moduleNamePattern>*\iface_omni.exe</moduleNamePattern>
+  </applicationConfiguration>
+  <agentOptions>
+    <entry>
+      <string>OPT_ENABLE_ACCESSIBILITY</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>OPT_TRUELOG_SCREENSHOT_MODE</string>
+      <int>2</int>
+    </entry>
+    <entry>
+      <string>OPT_ASSET_NAMESPACE</string>
+      <string>tt</string>
+    </entry>
+  </agentOptions>
+</recorderProject>
